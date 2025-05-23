@@ -1,3 +1,4 @@
+ls
 PERIOD 3
 Jamie Li, Jessie Wang
 Group Name: JJump
@@ -12,7 +13,7 @@ Nice to have features: Bat, puffer fishes, snakes, ice box, breakable walls
 
 UML Diagrams and descriptions of key algorithms, classes, and how things fit together.
 
-
+![Alt text](UMLdiagram.png?raw=true "UML Diagram" ) 
 
 # Intended pacing:
 
