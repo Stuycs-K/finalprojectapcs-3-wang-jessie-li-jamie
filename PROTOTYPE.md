@@ -1,6 +1,8 @@
 
 PERIOD 3
+
 Members: Jamie Li, Jessie Wang
+
 Group Name: JJump
 
 # Technical Details:
@@ -20,15 +22,15 @@ UML Diagrams and descriptions of key algorithms, classes, and how things fit tog
 # Intended pacing:
 
 Week 1:
-    - Finish coding the physics/PVector aspects of Player (Jamie) and skeleton for main (Jessie)
-    - Start on obstacles:
-        - Lava (Jamie)
-        - Spike (Jessie)
+    * Finish coding the physics/PVector aspects of Player (Jamie) and skeleton for main (Jessie)
+    * Start on obstacles:
+        * Lava (Jamie)
+        * Spike (Jessie)
 
 Week 2:
-    - Finish up obstacles:
-        - Points (Jessie)
-        - DartTrap (Jamie)
-    - Plan out maze (Jamie + Jessie) + coding it in Maze 
-    - Finish Main
-    - Add extra obstacles: moving spikes, bats, puffer fishes, snakes, etc.
+    * Finish up obstacles:
+        * Points (Jessie)
+        * DartTrap (Jamie)
+    * Plan out maze (Jamie + Jessie) + coding it in Maze 
+    * Finish Main
+    * Add extra obstacles: moving spikes, bats, puffer fishes, snakes, etc.
