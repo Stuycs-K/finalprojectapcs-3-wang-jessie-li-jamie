@@ -23,25 +23,25 @@ UML Diagrams and descriptions of key algorithms, classes, and how things fit tog
 
 Week 1:
 
-    - Finish coding the physics/PVector aspects of Player (Jamie) and skeleton for main (Jessie)
+- Finish coding the physics/PVector aspects of Player (Jamie) and skeleton for main (Jessie)
 
-    - Start on obstacles:
+- Start on obstacles:
 
-        * Lava (Jamie)
+    * Lava (Jamie)
 
-        * Spike (Jessie)
+    * Spike (Jessie)
 
 
 Week 2:
 
-    - Finish up obstacles:
+- Finish up obstacles:
 
-        * Points (Jessie)
+    * Points (Jessie)
 
-        * DartTrap (Jamie)
+    * DartTrap (Jamie)
 
-    - Plan out maze (Jamie + Jessie) + coding it in Maze 
+- Plan out maze (Jamie + Jessie) + coding it in Maze 
 
-    - Finish Main
+- Finish Main
 
-    - Add extra obstacles: moving spikes, bats, puffer fishes, snakes, etc.
+- Add extra obstacles: moving spikes, bats, puffer fishes, snakes, etc.
