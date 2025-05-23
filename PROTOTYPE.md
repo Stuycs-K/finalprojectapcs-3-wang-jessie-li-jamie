@@ -22,15 +22,26 @@ UML Diagrams and descriptions of key algorithms, classes, and how things fit tog
 # Intended pacing:
 
 Week 1:
-    * Finish coding the physics/PVector aspects of Player (Jamie) and skeleton for main (Jessie)
-    * Start on obstacles:
+
+    - Finish coding the physics/PVector aspects of Player (Jamie) and skeleton for main (Jessie)
+
+    - Start on obstacles:
+
         * Lava (Jamie)
+
         * Spike (Jessie)
 
+
 Week 2:
-    * Finish up obstacles:
+
+    - Finish up obstacles:
+
         * Points (Jessie)
+
         * DartTrap (Jamie)
-    * Plan out maze (Jamie + Jessie) + coding it in Maze 
-    * Finish Main
-    * Add extra obstacles: moving spikes, bats, puffer fishes, snakes, etc.
+
+    - Plan out maze (Jamie + Jessie) + coding it in Maze 
+
+    - Finish Main
+
+    - Add extra obstacles: moving spikes, bats, puffer fishes, snakes, etc.
