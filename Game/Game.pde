@@ -5,5 +5,21 @@ boolean drawMode = false;
 void setup(){
   size(1200, 900);
   maze = new Maze();
-  player = new Player;
+  player = new Player();
 }
+
+void draw(){
+  background(0);
+  if (!drawMode){
+    maze.render();
+    player.move();
+    player.render();
+    
+    for (Tile tile : Maze.grid){
+      if (tile.playerContact(player)){
+        player.setVel(0,0);
+      }
+    }
+  } else{
+    maze.render();
+    maze.
