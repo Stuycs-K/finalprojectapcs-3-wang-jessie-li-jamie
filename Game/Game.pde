@@ -1,14 +1,9 @@
 Player player;
 Maze maze;
-Lava lava;
-Spike[] spikes;
-DartTrap[] darts;
+boolean drawMode = false;
 
 void setup(){
-}
-
-void keyPressed(){
-}
-
-void draw(){
+  size(1200, 900);
+  maze = new Maze();
+  player = new Player;
 }
