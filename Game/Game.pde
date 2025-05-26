@@ -20,6 +20,10 @@ void draw(){
         player.setVel(0,0);
       }
     }
+    if (maze.end){
+      maze.endScreen();
+    }
   } else{
     maze.render();
-    maze.
+  }
+}
