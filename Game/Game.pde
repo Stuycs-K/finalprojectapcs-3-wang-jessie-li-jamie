@@ -27,3 +27,16 @@ void draw(){
     maze.render();
   }
 }
+void keyPressed(){
+  if (keyCode == UP){
+    player.setVel(0, -1);
+  } else if (keyCode == DOWN){
+    player.setVel(0, 1);
+  } else if (keyCode == LEFT){
+    player.setVel(-1, 0);
+  } else if (keyCode == RIGHT){
+    player.setVel(1, 0);
+  } else if (key == ' '){
+    drawMode = !drawMode;
+  }
+}
