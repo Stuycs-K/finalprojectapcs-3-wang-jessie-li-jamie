@@ -10,7 +10,7 @@ int item = tile;
 //add grid to make things easier to build
 void grid(){
   for (int i=0; i<(int)(height/10); i++){
-    for (int j=0; i<(int)(width/10); j++){
+    for (int j=0; j<(int)(width/10); j++){
       square(j*10, i*10, 10);
     }
   }
@@ -30,7 +30,7 @@ void mouseClicked() {
     int ycor = (mouseY/10)*10;
     if (item == tile){
       maze.grid.add(new Tile(xcor, ycor));
-    } else if (item == spikes){
+    } else if (item == spike){
       maze.grid.add(new Spike(xcor, ycor));
     }
     //adding more items later
@@ -50,8 +50,16 @@ void keyPressed() {
   //change between the game and build modes
   } else if (key == ' '){
     drawMode = !drawMode;
-  }
   //change items
+  } else if (key == '0'){
+    item = tile;
+  } else if (key == '1'){
+    item = spike;
+  } else if (key == '2'){
+    item = dartTrap;
+  } else if (key == '3'){
+    item = points;
+  }
 }
 
 //everything goes here
@@ -62,7 +70,7 @@ void draw() {
     player.move();
     player.render();
     
-    for (Tile tile : Maze.grid){
+    for (Tile tile : maze.grid){
       if (tile.playerContact(player)){
         player.setVel(0,0);
       }
