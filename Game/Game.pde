@@ -25,6 +25,7 @@ void setup(){
 
 void mouseClicked() {
   //used to add items in build mode
+  if 
 }
 
 void keyPressed() {
