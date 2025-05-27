@@ -8,11 +8,17 @@ static int dartTrap = 3;
 int item = tile;
 
 //add grid to make things easier to build
-void grid() {
+void grid(){
+  for (int i=0; i<(int)(height/10); i++){
+    for (int j=0; i<(int)(width/10); j++){
+      square(j*10, i*10, 10);
+    }
+  }
 }
 
 void setup(){
   size(1200, 900);
+  background(0);
   maze = new Maze();
   player = new Player();
 }
