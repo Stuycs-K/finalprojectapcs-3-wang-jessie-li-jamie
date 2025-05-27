@@ -25,7 +25,16 @@ void setup(){
 
 void mouseClicked() {
   //used to add items in build mode
-  if 
+  if (drawMode){
+    int xcor = (mouseX/10)*10;
+    int ycor = (mouseY/10)*10;
+    if (item == tile){
+      maze.grid.add(new Tile(xcor, ycor));
+    } else if (item == spikes){
+      maze.grid.add(new Spike(xcor, ycor));
+    }
+    //adding more items later
+  }
 }
 
 void keyPressed() {
