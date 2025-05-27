@@ -23,7 +23,8 @@ UML Diagrams and descriptions of key algorithms, classes, and how things fit tog
 
 Week 1:
 
-- Finish coding the physics/PVector aspects of Player (Jamie) and skeleton for main (Jessie)
+- Finish coding the physics/PVector aspects of Player (Jamie) and skeleton for main (Jessie) ✅
+- Finish Tile class ✅
 
 - Start on obstacles:
 
@@ -38,9 +39,9 @@ Week 2:
 
     * Points (Jessie)
 
-    * DartTrap (Jamie)
+    * DartTrap + Projectile (Jamie)
 
-- Plan out maze (Jamie + Jessie) + coding it in Maze 
+- Plan out maze on the build mode (Jamie + Jessie)
 
 - Finish Main
 
