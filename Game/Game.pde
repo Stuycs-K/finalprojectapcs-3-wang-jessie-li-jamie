@@ -1,6 +1,15 @@
 Player player;
-Maze maze;
+//Maze maze;
 boolean drawMode = false;
+static int tile = 0;
+static int spike = 1;
+static int points = 2;
+static int dartTrap = 3;
+int item = tile;
+
+//add grid to make things easier to build
+void grid() {
+}
 
 void setup(){
   size(1200, 900);
@@ -8,7 +17,29 @@ void setup(){
   player = new Player();
 }
 
-void draw(){
+void mouseClicked() {
+  //used to add items in build mode
+}
+
+void keyPressed() {
+  //change velocity
+  if (keyCode == UP){
+    player.setVel(0, -1);
+  } else if (keyCode == DOWN){
+    player.setVel(0, 1);
+  } else if (keyCode == LEFT){
+    player.setVel(-1, 0);
+  } else if (keyCode == RIGHT){
+    player.setVel(1, 0);
+  //change between the game and build modes
+  } else if (key == ' '){
+    drawMode = !drawMode;
+  }
+  //change items
+}
+
+//everything goes here
+void draw() {
   background(0);
   if (!drawMode){
     maze.render();
@@ -25,18 +56,5 @@ void draw(){
     }
   } else{
     maze.render();
-  }
-}
-void keyPressed(){
-  if (keyCode == UP){
-    player.setVel(0, -1);
-  } else if (keyCode == DOWN){
-    player.setVel(0, 1);
-  } else if (keyCode == LEFT){
-    player.setVel(-1, 0);
-  } else if (keyCode == RIGHT){
-    player.setVel(1, 0);
-  } else if (key == ' '){
-    drawMode = !drawMode;
   }
 }
