@@ -3,10 +3,10 @@ public class Tile{
   int tileSize;
   int c;
   
-  public Tile(int x, int y){
+  public Tile(int x, int y, int c){
     position = new int[]{x,y};
     tileSize = 10; //to be changed w testing
-    c = 255;
+    this.c = c;
   }
   
   void render() {
