@@ -2,17 +2,27 @@ public class Tile{
   int[] position;
   int tileSize;
   int c;
+  int rotation;
   
   public Tile(int x, int y, int c){
     position = new int[]{x,y};
     tileSize = 10; //to be changed w testing
     this.c = c;
+    rotation = 0;
   }
   
   void render() {
     fill(c);
     noStroke();
-    square(position[0], position[1], tileSize);
+    if (rotation == 0){
+      square(position[0], position[1], tileSize);
+    } else if (rotation == 90){
+      square(position[0]+tileSize, position[1], -tileSize);
+    } else if (rotation == 180){
+      square(position[0]+tileSize, position[1]+tileSize, -tileSize);
+    } else if (rotation == 270){
+      square(position[0], position[1]+tileSize, -tileSize);
+    }
   }
   
   void playerContact(Player player) {
