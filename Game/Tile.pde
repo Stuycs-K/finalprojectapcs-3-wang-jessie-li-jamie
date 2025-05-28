@@ -15,7 +15,7 @@ public class Tile{
     square(position[0], position[1], tileSize);
   }
   
-  void playerContact() {
+  void playerContact(Player player) {
     if (player.position.x > 0 ) {
       if (player.position.x > position[0]) {
         player.velocity.set(0,0);
