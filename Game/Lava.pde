@@ -3,16 +3,18 @@ public class Lava extends Tile {
   
   public Lava(int x, int y) {
     super(x,y, #32CD32);
-    speed = 1;
+    speed = 0;
   }
   
   void render() {
     fill(c);
     noStroke();
-    rect(0,0,width,0);
+    rect(0,0,width,speed);
   }
   
   void rise() {
-   
+    if (speed < height && !maze.end()) {
+      speed++; 
+    }
   }
 }
