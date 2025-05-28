@@ -52,14 +52,8 @@ void keyPressed() {
   } else if (key == ' '){
     drawMode = !drawMode;
   //change items
-  } else if (key == '0'){
-    item = tile;
-  } else if (key == '1'){
-    item = spike;
-  } else if (key == '2'){
-    item = dartTrap;
-  } else if (key == '3'){
-    item = points;
+  } else if (key == 't'){
+    item %= 4;
   }
 }
 
