@@ -21,6 +21,7 @@ void setup(){
   background(0);
   maze = new Maze();
   player = new Player();
+  lava = new Lava();
 }
 
 void mouseClicked() {
@@ -69,13 +70,13 @@ void draw() {
     maze.render();
     player.move();
     player.render();
+    lava.render();
     
     for (Tile tile : maze.grid){
-      if (tile.playerContact(player)){
-        player.setVel(0,0);
-      }
+      tile.render();
+      tile.playerContact(player);
     }
-    if (maze.end){
+    if (maze.end()){
       maze.endScreen();
     }
   } else{
