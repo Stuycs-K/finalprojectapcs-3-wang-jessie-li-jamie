@@ -28,7 +28,7 @@ Week 1:
 
 - Start on obstacles:
 
-    * Lava (Jamie)
+    * Lava (Jamie) ✅
 
     * Spike (Jessie)
 
