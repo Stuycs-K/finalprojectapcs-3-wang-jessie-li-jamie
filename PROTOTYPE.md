@@ -17,17 +17,18 @@ Nice to have features: Bat, puffer fishes, snakes, ice box, breakable walls
 
 UML Diagrams and descriptions of key algorithms, classes, and how things fit together.
 
-![Alt text](UMLdiagram.png?raw=true "UML Diagram" ) 
+![Alt text](UMLDiagram.png?raw=true "UML Diagram" ) 
 
 # Intended pacing:
 
 Week 1:
 
-- Finish coding the physics/PVector aspects of Player (Jamie) and skeleton for main (Jessie)
+- Finish coding the physics/PVector aspects of Player (Jamie) and skeleton for main (Jessie) ✅
+- Finish Tile class ✅
 
 - Start on obstacles:
 
-    * Lava (Jamie)
+    * Lava (Jamie) ✅
 
     * Spike (Jessie)
 
@@ -38,9 +39,9 @@ Week 2:
 
     * Points (Jessie)
 
-    * DartTrap (Jamie)
+    * DartTrap + Projectile (Jamie)
 
-- Plan out maze (Jamie + Jessie) + coding it in Maze 
+- Plan out maze on the build mode (Jamie + Jessie)
 
 - Finish Main
 
