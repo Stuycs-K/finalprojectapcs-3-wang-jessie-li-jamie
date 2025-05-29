@@ -16,10 +16,10 @@ public class Spike extends Tile{
     }
   }
   void playerContact(){
-    if (player.position.x >= position[0] && player.position.x < position[0]+tileSize && player.position.y >= position[1] && player.position.y < position[1]+tileSize){
+    if (checkContact()) {
+    //if (player.position.x > position[0] && player.position.x < position[0]+tileSize && player.position.y > position[1] && player.position.y < position[1]+tileSize){
       player.alive = false;
       player.c = color(100);
-      println("You died to a spike!");
     }
   }
 }
