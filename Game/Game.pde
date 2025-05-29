@@ -32,7 +32,7 @@ void mouseClicked() {
     int xcor = (mouseX/10)*10;
     int ycor = (mouseY/10)*10;
     if (item == tile){
-      Tile t = new Tile(xcor, ycor, color(128, 0, 128));
+      Tile t = new Tile(xcor, ycor, #800080);
       t.rotation = rotation;
       maze.grid.add(t);
     } else if (item == spike){
