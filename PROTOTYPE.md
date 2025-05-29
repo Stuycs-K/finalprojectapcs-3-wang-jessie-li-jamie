@@ -30,7 +30,7 @@ Week 1:
 
     * Lava (Jamie) ✅
 
-    * Spike (Jessie)
+    * Spike (Jessie) ✅
 
 
 Week 2:
