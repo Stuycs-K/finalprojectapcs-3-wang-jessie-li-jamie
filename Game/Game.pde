@@ -6,6 +6,7 @@ static int spike = 1;
 static int points = 2;
 static int dartTrap = 3;
 int item = tile;
+int rotation = 0;
 
 //add grid to make things easier to build
 void grid(){
@@ -30,9 +31,13 @@ void mouseClicked() {
     int xcor = (mouseX/10)*10;
     int ycor = (mouseY/10)*10;
     if (item == tile){
-      maze.grid.add(new Tile(xcor, ycor));
+      Tile t = new Tile(xcor, ycor, color(128, 0, 128));
+      t.rotation = rotation;
+      maze.grid.add(t);
     } else if (item == spike){
-      maze.grid.add(new Spike(xcor, ycor));
+      Spike s = new Spike(xcor, ycor);
+      s.rotation = rotation;
+      maze.grid.add(s);
     }
     //adding more items later
   }
@@ -54,6 +59,8 @@ void keyPressed() {
   //change items
   } else if (key == 't'){
     item %= 4;
+  } else if (key == 'r'){
+    rotation = (rotation + 90)%360;
   }
 }
 
@@ -67,7 +74,6 @@ void draw() {
     lava.render();
     
     for (Tile tile : maze.grid){
-      tile.render();
       tile.playerContact(player);
     }
     if (maze.end()){
