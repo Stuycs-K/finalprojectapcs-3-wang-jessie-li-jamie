@@ -1,5 +1,6 @@
 Player player;
 //Maze maze;
+Lava lava;
 boolean drawMode = false;
 static int tile = 0;
 static int spike = 1;
@@ -80,6 +81,7 @@ void draw() {
       maze.endScreen();
     }
   } else{
+    grid();
     maze.render();
   }
 }

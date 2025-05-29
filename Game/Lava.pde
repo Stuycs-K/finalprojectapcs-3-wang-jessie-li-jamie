@@ -18,4 +18,11 @@ public class Lava extends Tile {
       speed++; 
     }
   }
+  
+  void playerContact() {
+    if (player.position.y < position[1]) {
+      player.alive = false;
+      player.c = color(100);
+    }
+  }
 }

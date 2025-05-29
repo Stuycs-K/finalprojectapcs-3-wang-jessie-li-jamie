@@ -25,24 +25,23 @@ public class Tile{
     }
   }
   
-  void playerContact(Player player) {
+  boolean checkContact() {
     if (player.position.x > 0 ) {
-      if (player.position.x > position[0]) {
-        player.velocity.set(0,0);
-      }
+      return player.position.x > position[0];
     } else if (player.position.x < 0) {
-      if (player.position.x < position[0] + tileSize) {
-        player.velocity.set(0,0);
-      }
+      return player.position.x < position[0] + tileSize;
     }
     if (player.position.y > 0) {
-      if (player.position.y > position[1]) {
-         player.velocity.set(0,0);
-      }
+      return player.position.y > position[1];
     } else if (player.position.y < 0) {
-      if (player.position.y < position[1]+ tileSize) {
-         player.velocity.set(0,0);
-      }
+      return player.position.y < position[1]+ tileSize;
     }
+    return false;
+  }
+  
+  void playerContact() {
+    if (checkContact()) {
+        player.velocity.set(0,0);
+      }
   }
 }
