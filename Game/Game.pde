@@ -32,7 +32,7 @@ void mouseClicked() {
     int xcor = (mouseX/10)*10;
     int ycor = (mouseY/10)*10;
     if (item == tile){
-      Tile t = new Tile(xcor, ycor, color(128, 0, 128));
+      Tile t = new Tile(xcor, ycor, #800080);
       t.rotation = rotation;
       maze.grid.add(t);
     } else if (item == spike){
@@ -68,6 +68,27 @@ void keyPressed() {
 //everything goes here
 void draw() {
   background(0);
+  fill(255);
+  textSize(16);
+  String modeText = "";
+  if (drawMode){
+    modeText = "Build!";
+  } else{
+    modeText = "Play!";
+  } //text for mode
+  
+  String itemText = "";
+  if (item == tile){
+    itemText = "Tile";
+  } else if (item == spike){
+    itemText = "Spike";
+  } else if (item == points){
+    itemText = "Points";
+  } else if (item == dartTrap){
+    itemText = "Dart Trap";
+  } //text for items
+  text("Mode: " + modeText + "\nItem: " + itemText + "\nRotation: " + rotation, 10, 20);
+  
   if (!drawMode){
     maze.render();
     player.move();
