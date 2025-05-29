@@ -18,3 +18,6 @@ Spent around 20 minutes finishing up draw and working on keyPressed in the morni
 
 ### 2025-05-27 - Main Skeleton
 Worked in class on writing grid for build mode and started on mouseClicked as well. Then spent around half an hour at home working on finishing mouseClicked and adding key binds for build mode. Spent a few minutes starting spike class.
+
+### 2025-05-28 - Spike class and rotation
+Worked in class on writing the spike class. Spent around an hour at home working on adding rotation to build mode. 
