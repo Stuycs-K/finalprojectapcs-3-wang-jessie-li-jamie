@@ -68,6 +68,27 @@ void keyPressed() {
 //everything goes here
 void draw() {
   background(0);
+  fill(255);
+  textSize(16);
+  String modeText = "";
+  if (drawMode){
+    modeText = "Build!";
+  } else{
+    modeText = "Play!";
+  } //text for mode
+  
+  String itemText = "";
+  if (item == tile){
+    itemText = "Tile";
+  } else if (item == spike){
+    itemText = "Spike";
+  } else if (item == points){
+    itemText = "Points";
+  } else if (item == dartTrap){
+    itemText = "Dart Trap";
+  } //text for items
+  text("Mode: " + modeText + "\nItem: " + itemText + "\nRotation: " + rotation, 10, 20);
+  
   if (!drawMode){
     maze.render();
     player.move();
