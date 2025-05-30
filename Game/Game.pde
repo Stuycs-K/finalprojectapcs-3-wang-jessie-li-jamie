@@ -4,7 +4,7 @@ Lava lava;
 boolean drawMode = false;
 static int tile = 0;
 static int spike = 1;
-static int points = 2;
+static int point = 2;
 static int dartTrap = 3;
 int item = tile;
 int rotation = 0;
@@ -40,7 +40,11 @@ void mouseClicked() {
       s.rotation = rotation;
       maze.grid.add(s);
     }
-    //adding more items later
+    if (item == dartTrap){
+      DartTrap d = new DartTrap(xcor, ycor);
+      d.rotation = rotation;
+      maze.grid.add(d);
+    }
   }
 }
 
@@ -82,8 +86,8 @@ void draw() {
     itemText = "Tile";
   } else if (item == spike){
     itemText = "Spike";
-  } else if (item == points){
-    itemText = "Points";
+  } else if (item == point){
+    itemText = "Point";
   } else if (item == dartTrap){
     itemText = "Dart Trap";
   } //text for items
