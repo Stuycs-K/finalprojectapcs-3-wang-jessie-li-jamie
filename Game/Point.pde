@@ -1,4 +1,4 @@
-public class Point{
+public class Point extends Tile{
   public Point(int x, int y){
     super(x, y, #FFFF00);
   }
@@ -7,3 +7,10 @@ public class Point{
     noStroke();
     ellipse(position[0] + tileSize/2, position[1] + tileSize/2, tileSize * 0.6, tileSize * 0.6);
   }
+  void playerContact(){
+    if (checkContact()){
+      player.score++;
+      maze.grid.remove(this);
+    }
+  }
+}
