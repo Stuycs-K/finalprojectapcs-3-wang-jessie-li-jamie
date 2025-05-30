@@ -65,7 +65,7 @@ void keyPressed() {
     drawMode = !drawMode;
   //change items
   } else if (key == 't'){
-    item %= 4;
+    item = (item+1) % 4;
   } else if (key == 'r'){
     rotation = (rotation + 90)%360;
   }
@@ -76,7 +76,7 @@ void draw() {
   tick++;
   background(0);
   fill(#00FF00);
-  textSize(16);
+  textSize(26);
   String modeText = "";
   if (drawMode){
     modeText = "Build!";
@@ -94,7 +94,7 @@ void draw() {
   } else if (item == dartTrap){
     itemText = "Dart Trap";
   } //text for items
-  text("Mode: " + modeText + "\nItem: " + itemText + "\nRotation: " + rotation, 10, 20);
+  text("Mode: " + modeText + "\nItem: " + itemText + "\nRotation: " + rotation, 10, 30);
   
   if (!drawMode){
     text("Score: " + player.score, 10, 80);
@@ -110,7 +110,9 @@ void draw() {
       maze.endScreen();
     }
   } else{
+    noFill();
     grid();
+    fill(255);
     maze.render();
   }
 }
