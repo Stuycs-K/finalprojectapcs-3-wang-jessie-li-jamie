@@ -6,7 +6,7 @@ public class Tile{
   
   public Tile(int x, int y, int c){
     position = new int[]{x,y};
-    tileSize = 10; //to be changed w testing
+    tileSize = 50; //to be changed w testing
     this.c = c;
     rotation = 0;
   }
