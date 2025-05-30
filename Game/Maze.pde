@@ -10,3 +10,10 @@ public class Maze{
       t.render();
     }
   }
+  void endScreen(){
+    fill(255, 0, 0);
+    textSize(40);
+    textAlign(CENTER);
+    text("You died!", width/2, height/2);
+  }
+}
