@@ -5,13 +5,18 @@ public class Darts extends Tile{
   public Darts(int x, int y, float xVel, float yVel){
     super(x, y, 255);
     alive = true;
-    this.speed = 2;
+    speed = new PVector(xVel,yVel);
   }
   
   void render() {
     if (alive) {
       circle(position[0],position[1],2);
     }
+  }
+  
+   void move() {
+    position[0] += speed.x;
+    position[1] += speed.y;
   }
   
    void playerContact() {
@@ -23,8 +28,10 @@ public class Darts extends Tile{
   
   void wallContact() {
     for (Tile t: Maze.gird) {
-      if (checkContact(t.position[0], t.position[1], speed.x, speed.y))
-      
+      if (checkContact(t.position[0] + tileSize, t.position[1] - tileSize, -1 * speed.x, -1 * speed.y)) {
+        alive = false;
+      }
+    }   
   }
     
   
