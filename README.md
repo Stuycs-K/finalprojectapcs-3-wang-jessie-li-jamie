@@ -10,8 +10,8 @@ Users will begin in play mode and can use the spacebar to switch between build a
 In build mode, users can build a maze tile by tile on a grid. Users click the mouse to place things, use the t key to switch between tiles, spikes, dart traps, and points, and can use the r key the rotate them.
 
 The game interface includes:
-*A grid layout
-*On screen text that displays selected item, rotation, current mode, and score(play mode)
+- A grid layout
+- On screen text that displays selected item, rotation, current mode, and score(play mode)
 
 
   
