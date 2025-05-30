@@ -94,6 +94,7 @@ void draw() {
   text("Mode: " + modeText + "\nItem: " + itemText + "\nRotation: " + rotation, 10, 20);
   
   if (!drawMode){
+    text("Score: " + player.score, 10, 80);
     maze.render();
     player.move();
     player.render();
