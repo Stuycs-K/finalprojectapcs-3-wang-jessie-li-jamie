@@ -9,14 +9,16 @@ public class DartTrap extends Tile {
     fill(c);
     noStroke();
     square(position[0], position[1], tileSize);
-    if (rotation == 0){
-      //bottom
-    } else if (rotation == 90){
-      //left
-    } else if (rotation == 180){
-      //top 
-    } else if (rotation == 270){
-      //right
+    if (tick % 3 == 0) {
+      if (rotation == 0){
+        //bottom
+      } else if (rotation == 90){
+        //left
+      } else if (rotation == 180){
+        //top 
+      } else if (rotation == 270){
+        //right
+      }
     }
   }
   
