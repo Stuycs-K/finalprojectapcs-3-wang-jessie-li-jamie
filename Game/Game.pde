@@ -41,8 +41,10 @@ void mouseClicked() {
       Spike s = new Spike(xcor, ycor);
       s.rotation = rotation;
       maze.grid.add(s);
-    }
-    //if (item == dartTrap){
+    } else if (item == point){
+      Point p = new Point(xcor, ycor);
+      maze.grid.add(p);
+    }// else if (item == dartTrap){
       //DartTrap d = new DartTrap(xcor, ycor);
       //d.rotation = rotation;
       //maze.grid.add(d);
