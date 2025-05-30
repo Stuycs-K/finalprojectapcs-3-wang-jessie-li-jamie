@@ -5,3 +5,8 @@ public class Maze{
   public Maze(){
     grid = new ArrayList<Tile>();
   }
+  void render(){
+    for (Tile t : grid){
+      t.render();
+    }
+  }
