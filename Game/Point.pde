@@ -5,7 +5,7 @@ public class Point extends Tile{
   void render(){
     fill(c);
     noStroke();
-    ellipse(position[0] + tileSize/2, position[1] + tileSize/2, tileSize * 0.6, tileSize * 0.6);
+    ellipse(position[0] + tileSize/2, position[1] + tileSize/2, tileSize * 0.3, tileSize * 0.3);
   }
   void playerContact(){
     if (checkContact(player.position.x, player.position.y, player.velocity.x, player.velocity.y)){
