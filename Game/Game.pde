@@ -8,6 +8,7 @@ static int point = 2;
 static int dartTrap = 3;
 int item = tile;
 int rotation = 0;
+int tick = 0;
 
 //add grid to make things easier to build
 void grid(){
@@ -71,6 +72,7 @@ void keyPressed() {
 
 //everything goes here
 void draw() {
+  tick++;
   background(0);
   fill(255);
   textSize(16);

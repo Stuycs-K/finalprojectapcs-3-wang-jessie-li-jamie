@@ -14,34 +14,28 @@ public class Tile{
   void render() {
     fill(c);
     noStroke();
-    if (rotation == 0){
-      square(position[0], position[1], tileSize);
-    } else if (rotation == 90){
-      square(position[0]+tileSize, position[1], -tileSize);
-    } else if (rotation == 180){
-      square(position[0]+tileSize, position[1]+tileSize, -tileSize);
-    } else if (rotation == 270){
-      square(position[0], position[1]+tileSize, -tileSize);
-    }
+    square(position[0], position[1], tileSize);
   }
   
-  boolean checkContact() {
-    if (player.position.x > 0 ) {
-      return player.position.x > position[0];
-    } else if (player.position.x < 0) {
-      return player.position.x < position[0] + tileSize;
+  boolean checkContact(float x, float y, float xVel, float yVel) {
+    if (xVel > 0 ) {
+      return x > position[0];
+    } else if (xVel < 0) {
+      return x < position[0] + tileSize;
     }
-    if (player.position.y > 0) {
-      return player.position.y > position[1];
-    } else if (player.position.y < 0) {
-      return player.position.y < position[1]+ tileSize;
+    if (yVel > 0) {
+      return y > position[1];
+    } else if (yVel < 0) {
+      return y < position[1]+ tileSize;
     }
     return false;
   }
   
   void playerContact() {
-    if (checkContact()) {
+    if (checkContact(player.position.x, player.position.y, player.velocity.x, player.velocity.y)) {
         player.velocity.set(0,0);
       }
   }
+  
+ 
 }
