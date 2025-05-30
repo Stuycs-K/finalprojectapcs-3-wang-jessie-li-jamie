@@ -40,7 +40,7 @@ Week 2:
 
 - Finish up obstacles:
 
-    * Points (Jessie)
+    * Points (Jessie) ✅
 
     * DartTrap + Projectile (Jamie)
 
