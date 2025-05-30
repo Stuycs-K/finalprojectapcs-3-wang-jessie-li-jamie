@@ -5,9 +5,9 @@ Our project's goal is to recreate the game "Tomb of the Mask." It combines a maz
 
 # Intended usage:
 
-Users will begin in build mode, where they can build a maze tile by tile on a grid. Users click the mouse to place things, use the t key to switch between tiles, spikes, dart traps, and points, and can use the r key the rotate them.
+Users will begin in play mode and can use the spacebar to switch between build and play mode. In play mode, the user controls a character moving through a maze using the arrow keys. The objective is to collect points, make it to the end, and avoid any obstacle that could kill you. 
 
-Users can use the spacebar to switch between build and play mode. In play mode, the user controls a character moving through a maze using the arrow keys. The objective is to collect points, make it to the end, and avoid any obstacle that could kill you. 
+In build mode, users can build a maze tile by tile on a grid. Users click the mouse to place things, use the t key to switch between tiles, spikes, dart traps, and points, and can use the r key the rotate them.
 
 The game interface includes:
 *A grid layout
