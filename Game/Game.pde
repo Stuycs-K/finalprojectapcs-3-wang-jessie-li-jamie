@@ -94,10 +94,17 @@ void draw() {
   } else if (item == dartTrap){
     itemText = "Dart Trap";
   } //text for items
-  text("Mode: " + modeText + "\nItem: " + itemText + "\nRotation: " + rotation, 10, 30);
-  
+  if (drawMode){ 
+    fill(255);
+    text("Mode: " + modeText, 10, 30);
+    text("Item: " + itemText, 10, 60);
+    text("Rotation: " + rotation, 10, 90);
+  } else{
+    fill(255);
+    text("Mode: " + modeText, 10, 30);
+    text("Score: " + player.score, 10, 60);
+  }
   if (!drawMode){
-    text("Score: " + player.score, 10, 80);
     maze.render();
     player.move();
     player.render();
