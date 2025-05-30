@@ -19,6 +19,9 @@ UML Diagrams and descriptions of key algorithms, classes, and how things fit tog
 
 ![Alt text](UMLDiagram.png?raw=true "UML Diagram" ) 
 
+Old UML Diagram
+![Alt text](UMLdiagramOld.png?raw=true "Old UML Diagram" ) 
+
 # Intended pacing:
 
 Week 1:
@@ -30,14 +33,14 @@ Week 1:
 
     * Lava (Jamie) ✅
 
-    * Spike (Jessie)
+    * Spike (Jessie) ✅
 
 
 Week 2:
 
 - Finish up obstacles:
 
-    * Points (Jessie)
+    * Points (Jessie) ✅
 
     * DartTrap + Projectile (Jamie)
 

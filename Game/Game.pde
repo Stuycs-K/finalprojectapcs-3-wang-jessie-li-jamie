@@ -4,7 +4,7 @@ Lava lava;
 boolean drawMode = false;
 static int tile = 0;
 static int spike = 1;
-static int points = 2;
+static int point = 2;
 static int dartTrap = 3;
 int item = tile;
 int rotation = 0;
@@ -33,7 +33,7 @@ void mouseClicked() {
     int xcor = (mouseX/10)*10;
     int ycor = (mouseY/10)*10;
     if (item == tile){
-      Tile t = new Tile(xcor, ycor, color(128, 0, 128));
+      Tile t = new Tile(xcor, ycor, #800080);
       t.rotation = rotation;
       maze.grid.add(t);
     } else if (item == spike){
@@ -41,7 +41,11 @@ void mouseClicked() {
       s.rotation = rotation;
       maze.grid.add(s);
     }
-    //adding more items later
+    if (item == dartTrap){
+      DartTrap d = new DartTrap(xcor, ycor);
+      d.rotation = rotation;
+      maze.grid.add(d);
+    }
   }
 }
 
@@ -70,7 +74,29 @@ void keyPressed() {
 void draw() {
   tick++;
   background(0);
+  fill(255);
+  textSize(16);
+  String modeText = "";
+  if (drawMode){
+    modeText = "Build!";
+  } else{
+    modeText = "Play!";
+  } //text for mode
+  
+  String itemText = "";
+  if (item == tile){
+    itemText = "Tile";
+  } else if (item == spike){
+    itemText = "Spike";
+  } else if (item == point){
+    itemText = "Point";
+  } else if (item == dartTrap){
+    itemText = "Dart Trap";
+  } //text for items
+  text("Mode: " + modeText + "\nItem: " + itemText + "\nRotation: " + rotation, 10, 20);
+  
   if (!drawMode){
+    text("Score: " + player.score, 10, 80);
     maze.render();
     player.move();
     player.render();

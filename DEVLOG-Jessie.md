@@ -21,3 +21,6 @@ Worked in class on writing grid for build mode and started on mouseClicked as we
 
 ### 2025-05-28 - Spike class and rotation
 Worked in class on writing the spike class. Spent around an hour at home working on adding rotation to build mode. 
+
+### 2025-05-29 - Main class and Point class
+Worked in class on adding text in the main class, also fixed a few errors. Then spent around 45 minutes working on the Point class and adding that to the main. Spent around 15 minutes working on README.
