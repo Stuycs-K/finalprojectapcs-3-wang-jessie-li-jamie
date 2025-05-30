@@ -27,7 +27,7 @@ public class Darts extends Tile{
   }
   
   void wallContact() {
-    for (Tile t: Maze.gird) {
+    for (Tile t: maze.grid) {
       if (checkContact(t.position[0] + tileSize, t.position[1] - tileSize, -1 * speed.x, -1 * speed.y)) {
         alive = false;
       }

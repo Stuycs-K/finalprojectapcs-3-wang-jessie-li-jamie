@@ -25,7 +25,7 @@ public class Player{
   
   void setVel(int x, int y) {
     if (velocity.mag() == 0) {
-      position.set(x, y);
+      velocity.set(x, y);
     }
   }
 }
