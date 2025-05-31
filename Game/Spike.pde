@@ -1,6 +1,7 @@
 public class Spike extends Tile{
   public Spike(int x, int y){
     super(x, y, 255);
+    type = "spike";
   }
   void render(){
     fill(c);

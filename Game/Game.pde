@@ -112,9 +112,21 @@ void draw() {
     player.render();
     lava.render();
     
-    /*for (Tile tile : maze.grid){
-      tile.playerContact();
-    }*/
+    for (int i=maze.grid.size()-1; i>=0; i--){
+      Tile t = maze.grid.get(i);
+      if (t.type.equals("spike")){
+        if (t.checkContact(player.position.x, player.position.y)){
+          player.alive = false;
+          maze.end = true;
+        }
+      } else if (t.type.equals("point")){
+        if (t.checkContact(player.position.x, player.position.y)){
+          player.score++;
+          maze.grid.remove(i);
+        }
+      } //else if (t.type.equals("dart)){
+    }
+
     if (maze.end == true){
       maze.endScreen();
     }

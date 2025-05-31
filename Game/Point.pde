@@ -1,6 +1,7 @@
 public class Point extends Tile{
   public Point(int x, int y){
     super(x, y, #FFFF00);
+    type = "point";
   }
   void render(){
     fill(c);

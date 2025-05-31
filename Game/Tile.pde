@@ -3,12 +3,14 @@ public class Tile{
   int tileSize;
   int c;
   int rotation;
+  String type;
   
   public Tile(int x, int y, int c){
     position = new int[]{x,y};
     tileSize = 50; //to be changed w testing
     this.c = c;
     rotation = 0;
+    type = "tile";
   }
   
   void render() {

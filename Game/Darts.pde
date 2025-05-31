@@ -6,6 +6,7 @@ public class Darts extends Tile{
     super(x, y, 255);
     alive = true;
     speed = new PVector(xVel,yVel);
+    type = "dart";
   }
   
   void render() {
