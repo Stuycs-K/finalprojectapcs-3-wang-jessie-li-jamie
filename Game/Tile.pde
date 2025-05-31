@@ -19,14 +19,14 @@ public class Tile{
   
   boolean checkContact(float x, float y, float xVel, float yVel) {
     if (xVel > 0 ) {
-      return x > position[0];
+      return x >= position[0];
     } else if (xVel < 0) {
-      return x < position[0] + tileSize;
+      return x <= position[0] + tileSize;
     }
     if (yVel > 0) {
-      return y > position[1];
+      return y >= position[1];
     } else if (yVel < 0) {
-      return y < position[1]+ tileSize;
+      return y <= position[1]+ tileSize;
     }
     return false;
   }
