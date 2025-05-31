@@ -41,8 +41,10 @@ void mouseClicked() {
       Spike s = new Spike(xcor, ycor);
       s.rotation = rotation;
       maze.grid.add(s);
-    }
-    //if (item == dartTrap){
+    } else if (item == point){
+      Point p = new Point(xcor, ycor);
+      maze.grid.add(p);
+    }// else if (item == dartTrap){
       //DartTrap d = new DartTrap(xcor, ycor);
       //d.rotation = rotation;
       //maze.grid.add(d);
@@ -65,7 +67,7 @@ void keyPressed() {
     drawMode = !drawMode;
   //change items
   } else if (key == 't'){
-    item %= 4;
+    item = (item+1) % 4;
   } else if (key == 'r'){
     rotation = (rotation + 90)%360;
   }
@@ -76,7 +78,7 @@ void draw() {
   tick++;
   background(0);
   fill(#00FF00);
-  textSize(16);
+  textSize(26);
   String modeText = "";
   if (drawMode){
     modeText = "Build!";
@@ -94,10 +96,17 @@ void draw() {
   } else if (item == dartTrap){
     itemText = "Dart Trap";
   } //text for items
-  text("Mode: " + modeText + "\nItem: " + itemText + "\nRotation: " + rotation, 10, 20);
-  
+  if (drawMode){ 
+    fill(255);
+    text("Mode: " + modeText, 10, 30);
+    text("Item: " + itemText, 10, 60);
+    text("Rotation: " + rotation, 10, 90);
+  } else{
+    fill(255);
+    text("Mode: " + modeText, 10, 30);
+    text("Score: " + player.score, 10, 60);
+  }
   if (!drawMode){
-    text("Score: " + player.score, 10, 80);
     maze.render();
     player.move();
     player.render();
@@ -110,7 +119,9 @@ void draw() {
       maze.endScreen();
     }
   } else{
+    noFill();
     grid();
+    fill(255);
     maze.render();
   }
 }
