@@ -13,7 +13,7 @@ public class Lava extends Tile {
   }
   
   void rise(Maze maze) {
-    if (speed < height && !maze.end()) {
+    if (speed < height && !maze.end) {
       position[1]--;
       speed++; 
     }

@@ -24,3 +24,6 @@ Worked in class on writing the spike class. Spent around an hour at home working
 
 ### 2025-05-29 - Main class and Point class
 Worked in class on adding text in the main class, also fixed a few errors. Then spent around 45 minutes working on the Point class and adding that to the main. Spent around 15 minutes working on README.
+
+### 2025-05-30 - Maze class and Main Class
+Worked in class on writing the Maze class, also started testing and debugging in main. Spent around 25-30 mins at home fixing coloring and text issues in the main.

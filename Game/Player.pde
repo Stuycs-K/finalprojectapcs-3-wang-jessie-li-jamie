@@ -16,7 +16,7 @@ public class Player{
   void render() {
     fill(c);
     noStroke();
-    square(position.x, position.y, 5); //to be changed
+    square(position.x, position.y, 20); //to be changed
   }
   
   void move() {
@@ -24,8 +24,8 @@ public class Player{
   }
   
   void setVel(int x, int y) {
-    if (position.mag() == 0) {
-      position.set(x, y);
+    if (velocity.mag() == 0) {
+      velocity.set(x, y);
     }
   }
 }
