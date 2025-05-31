@@ -17,8 +17,9 @@ public class Tile{
     square(position[0], position[1], tileSize);
   }
   
-  boolean checkContact(float x, float y, float xVel, float yVel) {
-    if (xVel > 0 ) {
+  boolean checkContact(float x, float y /*float xVel, float yVel*/) {
+    return (x+20 > position[0] && x < position[0]+tileSize && y + 20 > position[1] && y < position[1]+tileSize);
+   /* if (xVel > 0 ) {
       return x > position[0];
     } else if (xVel < 0) {
       return x < position[0] + tileSize;
@@ -28,14 +29,14 @@ public class Tile{
     } else if (yVel < 0) {
       return y < position[1]+ tileSize;
     }
-    return false;
+    return false;*/
   }
   
-  void playerContact() {
+  /*void playerContact() {
     if (checkContact(player.position.x, player.position.y, player.velocity.x, player.velocity.y)) {
         player.velocity.set(0,0);
       }
-  }
+  }*/
   
  
 }

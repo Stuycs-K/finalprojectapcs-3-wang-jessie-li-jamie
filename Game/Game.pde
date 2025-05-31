@@ -112,9 +112,9 @@ void draw() {
     player.render();
     lava.render();
     
-    for (Tile tile : maze.grid){
+    /*for (Tile tile : maze.grid){
       tile.playerContact();
-    }
+    }*/
     if (maze.end == true){
       maze.endScreen();
     }

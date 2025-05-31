@@ -7,10 +7,10 @@ public class Point extends Tile{
     noStroke();
     ellipse(position[0] + tileSize/2, position[1] + tileSize/2, tileSize * 0.3, tileSize * 0.3);
   }
-  void playerContact(){
+  /*void playerContact(){
     if (checkContact(player.position.x, player.position.y, player.velocity.x, player.velocity.y)){
       player.score++;
       maze.grid.remove(this);
     }
-  }
+  }*/
 }
