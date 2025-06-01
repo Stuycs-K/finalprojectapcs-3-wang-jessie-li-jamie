@@ -1,22 +1,51 @@
+
 public class Darts extends Tile{
   PVector speed;
-  boolean alive;
+  int originalX;
+  int originalY;
+  int newX;
+  int newY;
     
-  public Darts(int x, int y, float xVel, float yVel){
+  public Darts(int x, int y){
     super(x, y, 255);
-    alive = true;
-    speed = new PVector(xVel,yVel);
     type = "dart";
+    originalX = x;
+    originalY = y;
   }
   
   void render() {
-    if (alive) {
+    if (drawMode && position[0] == originalX && position[1] == originalY) {
+      if (rotation == 0){
+          //bottom
+         position[0] += tileSize/2;
+         position[1] -= tileSize/2;
+         speed = new PVector (0.0, -1.0);
+        } else if (rotation == 90){
+          //left
+          position[0] = position[0] + tileSize + tileSize/2;
+          position[1] += tileSize/2;
+          speed = new PVector(1.0, 0.0);
+        } else if (rotation == 180){
+          //top 
+         position[0] += tileSize/2;
+         position[1] += tileSize + tileSize/2;
+         speed = new PVector (0.0, 1.0);
+        } else if (rotation == 270){
+          //right
+         position[0]-= tileSize/2;
+         position[1] += tileSize/2;
+         speed = new PVector (-1.0, 0.0);
+        }
+        newX = position[0];
+        newY = position[1];
+    } else {
+      playerContact();
+      wallContact();
       move();
+    }
       fill(c);
       noStroke();
-      circle(position[0],position[1],2);
-    }
-    println("rendering");
+      circle(position[0],position[1],10);
   }
   
    void move() {
@@ -24,20 +53,21 @@ public class Darts extends Tile{
     position[1] += speed.y;
   }
   
-   /*void playerContact() {
-    if (checkContact(player.position.x, player.position.y, player.velocity.x, player.velocity.y)) {
+   void playerContact() {
+    if (player.position.x+20 > position[0]-10 && player.position.x < position[0]+10 && player.position.y + 20 > position[1]-10 && player.position.y < position[1]+10) {
       player.alive = false;
       player.c = color(100);
       }
-  }*/
+  }
   
-  /*void wallContact() {
+  void wallContact() {
     for (Tile t: maze.grid) {
-      if (checkContact(t.position[0] + tileSize, t.position[1] - tileSize, -1 * speed.x, -1 * speed.y)) {
-        alive = false;
+      if (!t.type.equals("dart") && position[0]+10 > t.position[0] && position[0]-10 < t.position[0]+tileSize && position[1] + 10 > t.position[1] && position[1] - 10 < t.position[1]+tileSize) {
+        position[0] = newX;
+        position[1] = newY;
       }
     }   
-  }*/
+  }
     
   
 }

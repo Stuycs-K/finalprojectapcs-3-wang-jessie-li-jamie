@@ -22,6 +22,6 @@ public class Tile{
 <<<<<<< HEAD
   boolean checkContact(float x, float y) {
     return (x+20 > position[0] && x < position[0]+tileSize && y + 20 > position[1] && y < position[1]+tileSize);
->>>>>>> 37e34e0694214243ab75c30c474dfd2e59b2e042
+>>>>>>> Jamie
   }
 }

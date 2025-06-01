@@ -6,6 +6,7 @@ static int tile = 0;
 static int spike = 1;
 static int point = 2;
 static int dartTrap = 3;
+static int dart = 4;
 int item = tile;
 int rotation = 0;
 int tick = 0;
@@ -48,14 +49,16 @@ void mouseClicked() {
       DartTrap d = new DartTrap(xcor, ycor);
       d.rotation = rotation;
       maze.grid.add(d);
+    } else if (item == dart){
+      Darts d = new Darts(xcor, ycor);
+      d.rotation = rotation;
+      maze.grid.add(d);
     }
   }
 }
 
 void keyPressed() {
   //change velocity
-  for (Tile tile : maze.grid) {
-    if (!tile.checkContact(player.position.x, player.position.y, player.velocity.x, player.velocity.y)) {
       if (keyCode == UP){
         player.setVel(0, -10);
       } else if (keyCode == DOWN){
@@ -65,14 +68,12 @@ void keyPressed() {
       } else if (keyCode == RIGHT){
         player.setVel(10, 0);
       }
-    }
-}
   //change between the game and build modes
   if (key == ' '){
     drawMode = !drawMode;
   //change items
   } else if (key == 't'){
-    item = (item+1) % 4;
+    item = (item+1) % 5;
   } else if (key == 'r'){
     rotation = (rotation + 90)%360;
   }
@@ -94,7 +95,9 @@ void draw() {
   String itemText = "";
   if (item == tile){
     itemText = "Tile";
-  } else if (item == spike){
+  } else if (item == dart) {
+    itemText = "Dart";
+  }else if (item == spike){
     itemText = "Spike";
   } else if (item == point){
     itemText = "Point";
@@ -108,6 +111,7 @@ void draw() {
     text("Rotation: " + rotation, 10, 90);
     noFill();
     grid();
+    player.render();
     maze.render();
   } else{
     fill(255);
@@ -118,16 +122,14 @@ void draw() {
       maze.render();
       player.move();
       player.render();
-      lava.rise(maze);
       lava.render();
-    
       for (int i=maze.grid.size()-1; i>=0; i--){
         Tile t = maze.grid.get(i);
         if (t.type.equals("spike")){
           ((Spike)t).playerContact();
         } else if (t.type.equals("point")){
           ((Point)t).playerContact();
-        } //else if (t.type.equals("dart)){
+        }
       }
     } else{
       maze.end = true;
