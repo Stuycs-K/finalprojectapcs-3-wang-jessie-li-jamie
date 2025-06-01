@@ -1,6 +1,7 @@
 public class Spike extends Tile{
   public Spike(int x, int y){
     super(x, y, 255);
+    type = "spike";
   }
   void render(){
     fill(c);
@@ -16,8 +17,7 @@ public class Spike extends Tile{
     }
   }
   void playerContact(){
-    if (checkContact(player.position.x, player.position.y, player.velocity.x, player.velocity.y)) {
-    //if (player.position.x > position[0] && player.position.x < position[0]+tileSize && player.position.y > position[1] && player.position.y < position[1]+tileSize){
+    if (checkContact(player.position.x, player.position.y)){
       player.alive = false;
       player.c = color(100);
     }

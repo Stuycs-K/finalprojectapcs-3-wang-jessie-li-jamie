@@ -20,7 +20,17 @@ public class Player{
   }
   
   void move() {
-    position.add(velocity);
+    float nextX = position.x + velocity.x;
+    float nextY = position.y + velocity.y;
+    for (int i = 0; i < maze.grid.size(); i++) {
+      Tile t = maze.grid.get(i);
+      if (!t.type.equals("point") && !t.type.equals("spike") && t.checkContact(nextX, nextY)) {
+        velocity.set(0, 0);
+        return;
+      }
+    }
+    position.x = nextX;
+    position.y = nextY;
   }
   
   void setVel(int x, int y) {

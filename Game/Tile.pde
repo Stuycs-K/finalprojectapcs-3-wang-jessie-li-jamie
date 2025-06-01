@@ -3,12 +3,14 @@ public class Tile{
   int tileSize;
   int c;
   int rotation;
+  String type;
   
   public Tile(int x, int y, int c){
     position = new int[]{x,y};
     tileSize = 50; //to be changed w testing
     this.c = c;
     rotation = 0;
+    type = "tile";
   }
   
   void render() {
@@ -17,27 +19,9 @@ public class Tile{
     square(position[0], position[1], tileSize);
   }
   
-  boolean checkContact(float x, float y, float xVel, float yVel) {
-    if (xVel > 0 ) {
-      return x+20 >= position[0];
-    }
-    if (xVel < 0) {
-      return x <= position[0] + tileSize;
-    }
-    if (yVel > 0) {
-      return y+20 >= position[1];
-    }
-    if (yVel < 0) {
-      return y <= position[1]+ tileSize;
-    }
-    return false;
+<<<<<<< HEAD
+  boolean checkContact(float x, float y) {
+    return (x+20 > position[0] && x < position[0]+tileSize && y + 20 > position[1] && y < position[1]+tileSize);
+>>>>>>> 37e34e0694214243ab75c30c474dfd2e59b2e042
   }
-  
-  void playerContact() {
-    if (checkContact(player.position.x, player.position.y, player.velocity.x, player.velocity.y)) {
-        player.velocity.set(0,0);
-      }
-  }
-  
- 
 }
