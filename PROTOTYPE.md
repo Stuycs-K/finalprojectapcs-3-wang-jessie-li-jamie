@@ -42,10 +42,12 @@ Week 2:
 
     * Points (Jessie) ✅
 
-    * DartTrap + Projectile (Jamie)
+    * DartTrap + Projectile (Jamie) ✅
 
 - Plan out maze on the build mode (Jamie + Jessie)
 
-- Finish Main
+- Finish up build mode (Jamie + Jessie) ✅
+
+- Finish Main 
 
 - Add extra obstacles: moving spikes, bats, puffer fishes, snakes, etc.
