@@ -7,6 +7,7 @@ static int spike = 1;
 static int point = 2;
 static int dartTrap = 3;
 static int dart = 4;
+static int eraser = 5;
 int item = tile;
 int rotation = 0;
 int tick = 0;
@@ -53,6 +54,17 @@ void mouseClicked() {
       Darts d = new Darts(xcor, ycor);
       d.rotation = rotation;
       maze.grid.add(d);
+    } else if (item == eraser){
+      int indexToRemove = -1;
+      for (int i=maze.grid.size()-1; i>=0; i--){
+        Tile t = maze.grid.get(i);
+        if (t.position[0] == xcor && t.position[1] == ycor && indexToRemove == -1){
+          indexToRemove = i;
+        }
+      }
+      if (indexToRemove != -1){
+        maze.grid.remove(indexToRemove);
+      }
     }
   }
 }
@@ -73,7 +85,7 @@ void keyPressed() {
     drawMode = !drawMode;
   //change items
   } else if (key == 't'){
-    item = (item+1) % 5;
+    item = (item+1) % 6;
   } else if (key == 'r'){
     rotation = (rotation + 90)%360;
   }
@@ -95,7 +107,7 @@ void draw() {
   String itemText = "";
   if (item == tile){
     itemText = "Tile";
-  } else if (item == dart) {
+  } else if (item == dart){
     itemText = "Dart";
   }else if (item == spike){
     itemText = "Spike";
@@ -103,7 +115,9 @@ void draw() {
     itemText = "Point";
   } else if (item == dartTrap){
     itemText = "Dart Trap";
-  } //text for items
+  } else if (item == eraser){
+    itemText = "Eraser";
+  }//text for items
   if (drawMode){ 
     fill(255);
     text("Mode: " + modeText, 10, 30);
@@ -129,6 +143,8 @@ void draw() {
           ((Spike)t).playerContact();
         } else if (t.type.equals("point")){
           ((Point)t).playerContact();
+        } else if (t.type.equals("dart")){
+          ((Darts)t).playerContact();
         }
       }
     } else{
