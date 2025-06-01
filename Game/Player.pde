@@ -22,9 +22,9 @@ public class Player{
   void move() {
     float nextX = position.x + velocity.x;
     float nextY = position.y + velocity.y;
-    for (int i=0; i<maze.grid.size(); i++){
+    for (int i = 0; i < maze.grid.size(); i++) {
       Tile t = maze.grid.get(i);
-      if (t.checkContact(nextX, nextY)){
+      if (!t.type.equals("point") && !t.type.equals("spike") && t.checkContact(nextX, nextY)) {
         velocity.set(0, 0);
         return;
       }

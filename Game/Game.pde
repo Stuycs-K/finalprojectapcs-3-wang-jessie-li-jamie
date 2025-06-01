@@ -101,39 +101,32 @@ void draw() {
     text("Mode: " + modeText, 10, 30);
     text("Item: " + itemText, 10, 60);
     text("Rotation: " + rotation, 10, 90);
+    noFill();
+    grid();
+    maze.render();
   } else{
     fill(255);
     text("Mode: " + modeText, 10, 30);
     text("Score: " + player.score, 10, 60);
-  }
-  if (!drawMode){
-    maze.render();
-    player.move();
-    player.render();
-    lava.render();
+  
+    if (!drawMode && player.alive){
+      maze.render();
+      player.move();
+      player.render();
+      lava.rise(maze);
+      lava.render();
     
-    for (int i=maze.grid.size()-1; i>=0; i--){
-      Tile t = maze.grid.get(i);
-      if (t.type.equals("spike")){
-        if (t.checkContact(player.position.x, player.position.y)){
-          player.alive = false;
-          maze.end = true;
-        }
-      } else if (t.type.equals("point")){
-        if (t.checkContact(player.position.x, player.position.y)){
-          player.score++;
-          maze.grid.remove(i);
-        }
-      } //else if (t.type.equals("dart)){
-    }
-
-    if (maze.end == true){
+      for (int i=maze.grid.size()-1; i>=0; i--){
+        Tile t = maze.grid.get(i);
+        if (t.type.equals("spike")){
+          ((Spike)t).playerContact();
+        } else if (t.type.equals("point")){
+          ((Point)t).playerContact();
+        } //else if (t.type.equals("dart)){
+      }
+    } else{
+      maze.end = true;
       maze.endScreen();
     }
-  } else{
-    noFill();
-    grid();
-    fill(255);
-    maze.render();
   }
 }
