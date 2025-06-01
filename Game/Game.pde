@@ -109,10 +109,11 @@ void draw() {
     text("Mode: " + modeText, 10, 30);
     text("Score: " + player.score, 10, 60);
   
-    if (player.alive){
+    if (!drawMode && player.alive){
       maze.render();
       player.move();
       player.render();
+      lava.rise(maze);
       lava.render();
     
       for (int i=maze.grid.size()-1; i>=0; i--){
@@ -128,4 +129,4 @@ void draw() {
       maze.endScreen();
     }
   }
-  }
+}
