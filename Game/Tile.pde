@@ -19,9 +19,7 @@ public class Tile{
     square(position[0], position[1], tileSize);
   }
   
-<<<<<<< HEAD
   boolean checkContact(float x, float y) {
     return (x+20 > position[0] && x < position[0]+tileSize && y + 20 > position[1] && y < position[1]+tileSize);
->>>>>>> Jamie
   }
 }
