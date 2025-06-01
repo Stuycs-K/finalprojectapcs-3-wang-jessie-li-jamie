@@ -9,12 +9,11 @@ public class Lava extends Tile {
   void render() {
     fill(c);
     noStroke();
-    rect(position[0],position[1],width,speed);
+    rect(0, height-speed, width, speed);
   }
   
   void rise(Maze maze) {
     if (speed < height && !maze.end) {
-      position[1]--;
       speed++; 
     }
   }
