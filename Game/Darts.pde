@@ -39,6 +39,7 @@ public class Darts extends Tile{
         newX = position[0];
         newY = position[1];
     } else {
+      playerContact();
       wallContact();
       move();
     }
@@ -52,12 +53,12 @@ public class Darts extends Tile{
     position[1] += speed.y;
   }
   
-   /*void playerContact() {
-    if (checkContact(player.position.x, player.position.y, player.velocity.x, player.velocity.y)) {
+   void playerContact() {
+    if (player.position.x+20 > position[0]-10 && player.position.x < position[0]+10 && player.position.y + 20 > position[1]-10 && player.position.y < position[1]+10) {
       player.alive = false;
       player.c = color(100);
       }
-  }*/
+  }
   
   void wallContact() {
     for (Tile t: maze.grid) {
