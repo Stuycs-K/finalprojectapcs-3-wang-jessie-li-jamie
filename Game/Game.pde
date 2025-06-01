@@ -111,6 +111,7 @@ void draw() {
     text("Rotation: " + rotation, 10, 90);
     noFill();
     grid();
+    player.render();
     maze.render();
   } else{
     fill(255);
