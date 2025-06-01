@@ -7,6 +7,7 @@ static int spike = 1;
 static int point = 2;
 static int dartTrap = 3;
 static int dart = 4;
+static int eraser = 5;
 int item = tile;
 int rotation = 0;
 int tick = 0;
@@ -73,7 +74,7 @@ void keyPressed() {
     drawMode = !drawMode;
   //change items
   } else if (key == 't'){
-    item = (item+1) % 5;
+    item = (item+1) % 6;
   } else if (key == 'r'){
     rotation = (rotation + 90)%360;
   }
@@ -129,6 +130,8 @@ void draw() {
           ((Spike)t).playerContact();
         } else if (t.type.equals("point")){
           ((Point)t).playerContact();
+        } else if (t.type.equals("dart")){
+          ((Darts)t).playerContact();
         }
       }
     } else{
