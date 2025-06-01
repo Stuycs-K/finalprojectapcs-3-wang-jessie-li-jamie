@@ -11,10 +11,11 @@ public class Maze{
     }
   }
   void endScreen(){
+    background(0);
     fill(255, 0, 0);
     textSize(40);
     textAlign(CENTER);
     text("You died!", width/2, height/2);
-    text("Score: "+player.score, width/2, height-500/2);
+    text("Score: "+player.score, width/2, height-600/2);
   }
 }
