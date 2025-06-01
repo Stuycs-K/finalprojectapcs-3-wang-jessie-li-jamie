@@ -10,8 +10,12 @@ public class Darts extends Tile{
   
   void render() {
     if (alive) {
+      move();
+      fill(c);
+      noStroke();
       circle(position[0],position[1],2);
     }
+    println("rendering");
   }
   
    void move() {
