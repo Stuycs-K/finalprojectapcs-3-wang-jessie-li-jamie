@@ -4,6 +4,7 @@ public class Tile{
   int c;
   int rotation;
   String type;
+  PImage tile;
   
   public Tile(int x, int y, int c){
     position = new int[]{x,y};
@@ -11,12 +12,14 @@ public class Tile{
     this.c = c;
     rotation = 0;
     type = "tile";
+    tile = loadImage("img/tile.png");
   }
   
   void render() {
     fill(c);
     noStroke();
-    square(position[0], position[1], tileSize);
+    image(tile,position[0],position[1], tileSize, tileSize);
+    //square(position[0], position[1], tileSize);
   }
   
   boolean checkContact(float x, float y) {
