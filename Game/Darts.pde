@@ -1,7 +1,10 @@
+
 public class Darts extends Tile{
   PVector speed;
   int originalX;
   int originalY;
+  int newX;
+  int newY;
     
   public Darts(int x, int y){
     super(x, y, 255);
@@ -33,7 +36,10 @@ public class Darts extends Tile{
          position[1] += tileSize/2;
          speed = new PVector (-1.0, 0.0);
         }
+        newX = position[0];
+        newY = position[1];
     } else {
+      wallContact();
       move();
     }
       fill(c);
@@ -55,9 +61,9 @@ public class Darts extends Tile{
   
   void wallContact() {
     for (Tile t: maze.grid) {
-      if (position[0]+10 > t.position[0] && position[0] < t.position[0]+tileSize && position[1] + 20 > t.position[1] && position[1] < t.position[1]+tileSize) {
-        position[0] = originalX;
-        position[1] = originalY;
+      if (!t.type.equals("dart") && position[0]+10 > t.position[0] && position[0]-10 < t.position[0]+tileSize && position[1] + 10 > t.position[1] && position[1] - 10 < t.position[1]+tileSize) {
+        position[0] = newX;
+        position[1] = newY;
       }
     }   
   }
