@@ -26,7 +26,7 @@ void setup(){
   size(1200, 900);
   background(0);
   maze = new Maze();
-  player = new Player(600,450);
+  player = new Player(600 + 17,450+17);
   lava = new Lava();
 }
 
