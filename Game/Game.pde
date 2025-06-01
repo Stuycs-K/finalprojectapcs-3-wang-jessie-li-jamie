@@ -44,26 +44,31 @@ void mouseClicked() {
     } else if (item == point){
       Point p = new Point(xcor, ycor);
       maze.grid.add(p);
-    }// else if (item == dartTrap){
-      //DartTrap d = new DartTrap(xcor, ycor);
-      //d.rotation = rotation;
-      //maze.grid.add(d);
-    //}
+    } else if (item == dartTrap){
+      DartTrap d = new DartTrap(xcor, ycor);
+      d.rotation = rotation;
+      maze.grid.add(d);
+    }
   }
 }
 
 void keyPressed() {
   //change velocity
-  if (keyCode == UP){
-    player.setVel(0, -10);
-  } else if (keyCode == DOWN){
-    player.setVel(0, 10);
-  } else if (keyCode == LEFT){
-    player.setVel(-10, 0);
-  } else if (keyCode == RIGHT){
-    player.setVel(10, 0);
+  for (Tile tile : maze.grid) {
+    if (!tile.checkContact(player.position.x, player.position.y, player.velocity.x, player.velocity.y)) {
+      if (keyCode == UP){
+        player.setVel(0, -10);
+      } else if (keyCode == DOWN){
+        player.setVel(0, 10);
+      } else if (keyCode == LEFT){
+        player.setVel(-10, 0);
+      } else if (keyCode == RIGHT){
+        player.setVel(10, 0);
+      }
+    }
+}
   //change between the game and build modes
-  } else if (key == ' '){
+  if (key == ' '){
     drawMode = !drawMode;
   //change items
   } else if (key == 't'){
