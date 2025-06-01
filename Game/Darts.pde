@@ -11,35 +11,34 @@ public class Darts extends Tile{
   }
   
   void render() {
-    int x = 0; 
-    int y = 0;
-    if (rotation == 0){
-        //bottom
-       x = position[0] + tileSize/2;
-       y = position[1] - tileSize/2;
-       speed = new PVector (0.0, -1.0);
-      } else if (rotation == 90){
-        //left
-        x =position[0] + tileSize + tileSize/2;
-        y = position[1] + tileSize/2;
-        speed = new PVector(1.0, 0.0);
-      } else if (rotation == 180){
-        //top 
-       x = position[0] + tileSize/2;
-       y = position[1] +tileSize + tileSize/2;
-       speed = new PVector (0.0, 1.0);
-      } else if (rotation == 270){
-        //right
-       x = position[0]- tileSize/2;
-       y = position[1] + tileSize/2;
-       speed = new PVector (-1.0, 0.0);
-      }
-      fill(c);
-      noStroke();
-      circle(x,y,10);
-      if (!drawMode) {
+    if (drawMode && position[0] == originalX && position[1] == originalY) {
+      if (rotation == 0){
+          //bottom
+         position[0] += tileSize/2;
+         position[1] -= tileSize/2;
+         speed = new PVector (0.0, -1.0);
+        } else if (rotation == 90){
+          //left
+          position[0] = position[0] + tileSize + tileSize/2;
+          position[1] += tileSize/2;
+          speed = new PVector(1.0, 0.0);
+        } else if (rotation == 180){
+          //top 
+         position[0] += tileSize/2;
+         position[1] += tileSize + tileSize/2;
+         speed = new PVector (0.0, 1.0);
+        } else if (rotation == 270){
+          //right
+         position[0]-= tileSize/2;
+         position[1] += tileSize/2;
+         speed = new PVector (-1.0, 0.0);
+        }
+    } else {
       move();
     }
+      fill(c);
+      noStroke();
+      circle(position[0],position[1],10);
   }
   
    void move() {

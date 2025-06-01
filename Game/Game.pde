@@ -123,7 +123,6 @@ void draw() {
       player.render();
       lava.rise(maze);
       lava.render();
-    
       for (int i=maze.grid.size()-1; i>=0; i--){
         Tile t = maze.grid.get(i);
         if (t.type.equals("spike")){
@@ -133,7 +132,7 @@ void draw() {
         } else if (t.type.equals("point")){
           ((Point)t).playerContact();
         } else if (t.type.equals("dart")){
-          ((Darts)t).wallContact();
+          //((Darts)t).wallContact();
         }
       }
     } else{
