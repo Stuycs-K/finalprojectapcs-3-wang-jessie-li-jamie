@@ -11,20 +11,20 @@ public class Lava extends Tile {
     fill(c);
     noStroke();
     rect(0, height-speed, width, speed);
+    if (height-speed >= player.position.y+20) {
+      rise();
+    }
+    playerContact();
   }
   
-  void rise(Maze maze) {
+  void rise() {
     if (speed < height && !maze.end) {
       speed += 0.5; 
-    } else if (speed <= player.position.y + 20) {
-      maze.end = true;
-      player.alive = false;
-      player.c = color(100);
     }
   }
   
   void playerContact() {
-    if (speed <= player.position.y){
+    if (height-speed <= player.position.y+20){
       player.alive = false;
       player.c = color(100);
     }
