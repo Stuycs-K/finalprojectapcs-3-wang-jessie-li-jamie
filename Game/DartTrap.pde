@@ -1,8 +1,9 @@
 public class DartTrap extends Tile {
   PImage trap1,trap2,trap3,trap4;
   
-  public DartTrap(int x, int y){
+  public DartTrap(int x, int y, int r){
     super(x, y, 255);
+    rotation = r;
     trap1 = loadImage("img/dartTrap1.png");
     trap2 = loadImage("img/dartTrap2.png");
     trap3 = loadImage("img/dartTrap3.png");
