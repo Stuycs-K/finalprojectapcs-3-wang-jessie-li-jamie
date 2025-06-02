@@ -1,14 +1,17 @@
 public class End extends Tile{
+  PImage end;
   
   public End(int x, int y) {
     super(x,y, 255);
     type = "end";
+    end = loadImage("img/end.png");
   }
   
   void render() {
     fill(c);
     noStroke();
-    square(position[0], position[1], tileSize);
+    image(end,position[0], position[1], tileSize, tileSize);
+    //square(position[0], position[1], tileSize);
     playerContact();
   }
   
