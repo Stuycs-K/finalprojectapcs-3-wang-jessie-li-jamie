@@ -3,7 +3,7 @@ public class Point extends Tile{
   
   public Point(int x, int y){
     super(x, y, #FFFF00);
-    type = "point";
+    type = "Point";
     coin = loadImage("img/coins.png");
   }
   void render(){

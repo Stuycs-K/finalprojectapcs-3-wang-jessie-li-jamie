@@ -8,7 +8,7 @@ public class Darts extends Tile{
     
   public Darts(int x, int y){
     super(x, y, 255);
-    type = "dart";
+    type = "Darts";
     originalX = x;
     originalY = y;
   }
@@ -63,7 +63,7 @@ public class Darts extends Tile{
   
   void wallContact() {
     for (Tile t: maze.grid) {
-      if (!t.type.equals("dart") && position[0]+10 > t.position[0] && position[0]-10 < t.position[0]+tileSize && position[1] + 10 > t.position[1] && position[1] - 10 < t.position[1]+tileSize) {
+      if (!t.type.equals("Darts") && position[0]+10 > t.position[0] && position[0]-10 < t.position[0]+tileSize && position[1] + 10 > t.position[1] && position[1] - 10 < t.position[1]+tileSize) {
         position[0] = newX;
         position[1] = newY;
       }
