@@ -26,7 +26,12 @@ public class Maze{
   String toString() {
     String result = "";
     for (int i = 0; i < grid.size(); i++) {
-      result += "new " + grid.get(i).type + "(" + grid.get(i).position[0] + "," + grid.get(i).position[1];
+      result += "new " + grid.get(i).type + "(" ;
+      if (grid.get(i).type.equals("Darts")) {
+        result += ((Darts)grid.get(i)).originalX + "," + ((Darts)grid.get(i)).originalY;
+      } else {
+        result += grid.get(i).position[0] + "," + grid.get(i).position[1];
+      }
       if (grid.get(i).type.equals("Tile")) {
         result += ", #800080";
       }

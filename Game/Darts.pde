@@ -15,7 +15,7 @@ public class Darts extends Tile{
   }
   
   void render() {
-    if (drawMode && position[0] == originalX && position[1] == originalY) {
+    if ((drawMode && position[0] == originalX && position[1] == originalY)||(!drawMode && position[0] == originalX && position[1] == originalY)) {
       if (rotation == 0){
           //bottom
          position[0] += tileSize/2;
@@ -50,10 +50,8 @@ public class Darts extends Tile{
   }
   
    void move() {
-    if (position != null && speed != null) {
     position[0] += speed.x;
     position[1] += speed.y;
-   }
   }
   
    void playerContact() {
