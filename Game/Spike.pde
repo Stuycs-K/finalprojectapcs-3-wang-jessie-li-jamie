@@ -30,6 +30,7 @@ public class Spike extends Tile{
     if (checkContact(player.position.x, player.position.y)){
       player.alive = false;
       player.c = color(100);
+      maze.end = true;
     }
   }
 }
