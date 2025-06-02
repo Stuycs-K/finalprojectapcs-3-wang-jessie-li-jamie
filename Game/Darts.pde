@@ -6,8 +6,9 @@ public class Darts extends Tile{
   int newX;
   int newY;
     
-  public Darts(int x, int y){
+  public Darts(int x, int y, int r){
     super(x, y, 255);
+    rotation = r;
     type = "Darts";
     originalX = x;
     originalY = y;

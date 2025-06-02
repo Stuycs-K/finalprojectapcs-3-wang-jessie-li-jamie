@@ -1,9 +1,10 @@
 public class Spike extends Tile{
   PImage spikes1, spikes2, spikes3, spikes4;
   
-  public Spike(int x, int y){
+  public Spike(int x, int y,int r){
     super(x, y, 255);
     type = "Spike";
+    rotation = r;
     spikes1 = loadImage("img/spikes1.png");
     spikes2 = loadImage("img/spikes2.png");
     spikes3 = loadImage("img/spikes3.png");
