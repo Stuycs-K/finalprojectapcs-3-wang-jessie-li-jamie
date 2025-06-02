@@ -34,6 +34,8 @@ public class Maze{
       }
       if (grid.get(i).type.equals("Tile")) {
         result += ", #800080";
+      } else if (grid.get(i).type.equals("Spike") || grid.get(i).type.equals("DartTrap") || grid.get(i).type.equals("Darts")) {
+        result += ", " + grid.get(i).rotation;
       }
       result += ")";
       if (i != grid.size()-1) {

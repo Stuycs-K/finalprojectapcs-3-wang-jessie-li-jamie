@@ -20,22 +20,22 @@ public class Darts extends Tile{
           //bottom
          position[0] += tileSize/2;
          position[1] -= tileSize/2;
-         speed = new PVector (0.0, -1.0);
+         speed = new PVector (0.0, -2.0);
         } else if (rotation == 90){
           //left
           position[0] = position[0] + tileSize + tileSize/2;
           position[1] += tileSize/2;
-          speed = new PVector(1.0, 0.0);
+          speed = new PVector(2.0, 0.0);
         } else if (rotation == 180){
           //top 
          position[0] += tileSize/2;
          position[1] += tileSize + tileSize/2;
-         speed = new PVector (0.0, 1.0);
+         speed = new PVector (0.0, 2.0);
         } else if (rotation == 270){
           //right
          position[0]-= tileSize/2;
          position[1] += tileSize/2;
-         speed = new PVector (-1.0, 0.0);
+         speed = new PVector (-2.0, 0.0);
         }
         newX = position[0];
         newY = position[1];
