@@ -74,6 +74,9 @@ void mouseClicked() {
 }
 
 void keyPressed() {
+  if (key == 'd') {
+    println(maze.toString());
+  }
   //change velocity
       if (keyCode == UP){
         player.setVel(0, -10);
@@ -92,7 +95,7 @@ void keyPressed() {
     item = (item+1) % 7;
   } else if (key == 'r'){
     rotation = (rotation + 90)%360;
-  }
+  } 
 }
 
 //everything goes here
@@ -144,11 +147,11 @@ void draw() {
       lava.render();
       for (int i=maze.grid.size()-1; i>=0; i--){
         Tile t = maze.grid.get(i);
-        if (t.type.equals("spike")){
+        if (t.type.equals("Spike")){
           ((Spike)t).playerContact();
-        } else if (t.type.equals("point")){
+        } else if (t.type.equals("Point")){
           ((Point)t).playerContact();
-        } else if (t.type.equals("dart")){
+        } else if (t.type.equals("Darts")){
           ((Darts)t).playerContact();
         }
       }

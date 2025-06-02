@@ -11,7 +11,7 @@ public class Tile{
     tileSize = 50; //to be changed w testing
     this.c = c;
     rotation = 0;
-    type = "tile";
+    type = "Tile";
     tile = loadImage("img/tile.png");
   }
   

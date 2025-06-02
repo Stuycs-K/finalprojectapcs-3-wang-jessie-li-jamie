@@ -3,7 +3,7 @@ public class Spike extends Tile{
   
   public Spike(int x, int y){
     super(x, y, 255);
-    type = "spike";
+    type = "Spike";
     spikes1 = loadImage("img/spikes1.png");
     spikes2 = loadImage("img/spikes2.png");
     spikes3 = loadImage("img/spikes3.png");
