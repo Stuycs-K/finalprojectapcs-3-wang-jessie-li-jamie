@@ -27,7 +27,7 @@ void setup(){
   size(1200, 900);
   background(0);
   maze = new Maze();
-  player = new Player(600 + 17,450+17);
+  player = new Player(100 + 17,700+17);
   lava = new Lava();
 }
 
@@ -137,7 +137,6 @@ void draw() {
     player.render();
     maze.render();
   } else{
-      
     fill(255);
     text("Mode: " + modeText, 10, 30);
     text("Score: " + player.score, 10, 60);

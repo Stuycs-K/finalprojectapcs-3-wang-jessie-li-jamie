@@ -49,8 +49,10 @@ public class Darts extends Tile{
   }
   
    void move() {
+    if (position != null && speed != null) {
     position[0] += speed.x;
     position[1] += speed.y;
+   }
   }
   
    void playerContact() {
@@ -63,7 +65,7 @@ public class Darts extends Tile{
   
   void wallContact() {
     for (Tile t: maze.grid) {
-      if (!t.type.equals("Darts") && position[0]+10 > t.position[0] && position[0]-10 < t.position[0]+tileSize && position[1] + 10 > t.position[1] && position[1] - 10 < t.position[1]+tileSize) {
+      if (!t.type.equals("Darts") && !t.type.equals("Point") && position[0]+10 > t.position[0] && position[0]-10 < t.position[0]+tileSize && position[1] + 10 > t.position[1] && position[1] - 10 < t.position[1]+tileSize) {
         position[0] = newX;
         position[1] = newY;
       }
