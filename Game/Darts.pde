@@ -57,6 +57,7 @@ public class Darts extends Tile{
     if (player.position.x+20 > position[0]-10 && player.position.x < position[0]+10 && player.position.y + 20 > position[1]-10 && player.position.y < position[1]+10) {
       player.alive = false;
       player.c = color(100);
+      maze.end = true;
       }
   }
   

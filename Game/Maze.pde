@@ -15,7 +15,11 @@ public class Maze{
     fill(255, 0, 0);
     textSize(40);
     textAlign(CENTER);
-    text("You died!", width/2, height/2);
+    if (!player.alive) {
+      text("You died!", width/2, height/2);
+    } else {
+      text("You win!", width/2, height/2);
+    }
     text("Score: "+player.score, width/2, height-600/2);
   }
 }
