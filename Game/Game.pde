@@ -1,6 +1,9 @@
 Player player;
 Maze maze;
 Lava lava;
+PImage startPage;
+PImage startPage2;
+int gameState = 0;
 boolean drawMode = false;
 static int tile = 0;
 static int spike = 1;
@@ -25,6 +28,8 @@ void grid(){
 
 void setup(){
   size(1200, 900);
+  startPage = loadImage("img/startPage.png");
+  startPage2 = loadImage("img/startPage2.png");
   background(0);
   maze = new Maze();
   player = new Player(100 + 17,700+17);
@@ -106,6 +111,11 @@ void keyPressed() {
 
 //everything goes here
 void draw() {
+  if (gameState == 0){
+    image(startPage, 0, 0, width, height);
+  } else if (gameState == 1){
+    image(startPage2, 0, 0, width, height);
+  } else if (gameState == 2){
   tick++;
   background(0);
   fill(#00FF00);
@@ -164,5 +174,6 @@ void draw() {
       background(0);
       maze.endScreen();
       }
+    }
   }
 }
