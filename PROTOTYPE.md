@@ -19,6 +19,9 @@ UML Diagrams and descriptions of key algorithms, classes, and how things fit tog
 
 ![Alt text](UMLDiagram.png?raw=true "UML Diagram" ) 
 
+Old UML Diagram
+![Alt text](UMLdiagramOld.png?raw=true "Old UML Diagram" ) 
+
 # Intended pacing:
 
 Week 1:
@@ -30,19 +33,21 @@ Week 1:
 
     * Lava (Jamie) ✅
 
-    * Spike (Jessie)
+    * Spike (Jessie) ✅
 
 
 Week 2:
 
 - Finish up obstacles:
 
-    * Points (Jessie)
+    * Points (Jessie) ✅
 
-    * DartTrap + Projectile (Jamie)
+    * DartTrap + Projectile (Jamie) ✅
 
 - Plan out maze on the build mode (Jamie + Jessie)
 
-- Finish Main
+- Finish up build mode (Jamie + Jessie) ✅
+
+- Finish Main 
 
 - Add extra obstacles: moving spikes, bats, puffer fishes, snakes, etc.

@@ -16,16 +16,26 @@ public class Player{
   void render() {
     fill(c);
     noStroke();
-    square(position.x, position.y, 5); //to be changed
+    square(position.x, position.y, 20); //to be changed
   }
   
   void move() {
-    position.add(velocity);
+    float nextX = position.x + velocity.x;
+    float nextY = position.y + velocity.y;
+    for (int i = 0; i < maze.grid.size(); i++) {
+      Tile t = maze.grid.get(i);
+      if (!t.type.equals("Point") && !t.type.equals("Spike") && !t.type.equals("End") && t.checkContact(nextX, nextY)) {
+        velocity.set(0, 0);
+        return;
+      }
+    }
+    position.x = nextX;
+    position.y = nextY;
   }
   
   void setVel(int x, int y) {
-    if (position.mag() == 0) {
-      position.set(x, y);
+    if (velocity.mag() == 0) {
+      velocity.set(x, y);
     }
   }
 }

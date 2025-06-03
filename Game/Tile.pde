@@ -3,45 +3,26 @@ public class Tile{
   int tileSize;
   int c;
   int rotation;
+  String type;
+  PImage tile;
   
   public Tile(int x, int y, int c){
     position = new int[]{x,y};
-    tileSize = 10; //to be changed w testing
+    tileSize = 50; //to be changed w testing
     this.c = c;
     rotation = 0;
+    type = "Tile";
+    tile = loadImage("img/tile.png");
   }
   
   void render() {
     fill(c);
     noStroke();
-    if (rotation == 0){
-      square(position[0], position[1], tileSize);
-    } else if (rotation == 90){
-      square(position[0]+tileSize, position[1], -tileSize);
-    } else if (rotation == 180){
-      square(position[0]+tileSize, position[1]+tileSize, -tileSize);
-    } else if (rotation == 270){
-      square(position[0], position[1]+tileSize, -tileSize);
-    }
+    image(tile,position[0],position[1], tileSize, tileSize);
+    //square(position[0], position[1], tileSize);
   }
   
-  boolean checkContact() {
-    if (player.position.x > 0 ) {
-      return player.position.x > position[0];
-    } else if (player.position.x < 0) {
-      return player.position.x < position[0] + tileSize;
-    }
-    if (player.position.y > 0) {
-      return player.position.y > position[1];
-    } else if (player.position.y < 0) {
-      return player.position.y < position[1]+ tileSize;
-    }
-    return false;
-  }
-  
-  void playerContact() {
-    if (checkContact()) {
-        player.velocity.set(0,0);
-      }
+  boolean checkContact(float x, float y) {
+    return (x+20 > position[0] && x < position[0]+tileSize && y + 20 > position[1] && y < position[1]+tileSize);
   }
 }

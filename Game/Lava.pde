@@ -4,25 +4,30 @@ public class Lava extends Tile {
   public Lava() {
     super(0,height, #32CD32);
     speed = 0;
+    type = "lava";
   }
   
   void render() {
     fill(c);
     noStroke();
-    rect(position[0],position[1],width,speed);
+    rect(0, height-speed, width, speed);
+    if (height-speed >= player.position.y+20) {
+      rise();
+    }
+    playerContact();
   }
   
-  void rise(Maze maze) {
-    if (speed < height && !maze.end()) {
-      position[1]--;
-      speed++; 
+  void rise() {
+    if (speed < height && !maze.end) {
+      speed += 0.5; 
     }
   }
   
   void playerContact() {
-    if (player.position.y < position[1]) {
+    if (height-speed <= player.position.y+20){
       player.alive = false;
       player.c = color(100);
+      maze.end = true;
     }
   }
 }

@@ -21,3 +21,18 @@ Worked in class on writing grid for build mode and started on mouseClicked as we
 
 ### 2025-05-28 - Spike class and rotation
 Worked in class on writing the spike class. Spent around an hour at home working on adding rotation to build mode. 
+
+### 2025-05-29 - Main class and Point class
+Worked in class on adding text in the main class, also fixed a few errors. Then spent around 45 minutes working on the Point class and adding that to the main. Spent around 15 minutes working on README.
+
+### 2025-05-30 - Maze class and Main Class
+Worked in class on writing the Maze class, also started testing and debugging in main. Spent around 25-30 mins at home fixing coloring and text issues in the main.
+
+### 2025-05-31 - Fixing player contact issues and fixing up rendering
+Spent around an hour working on fixing issues with the player contact with tiles, spikes, and points. Spent around another hour later finishing up contact with spikes and points, also fixed lava rendering issue.
+
+### 2025-06-01 - Main class and Eraser
+Spent around 25 minutes adding dart contact to main class and adding an eraser function to build mode.
+
+### 2025-06-02 - Main class and Images
+Spend class on canva making start pages and end page. Spent about half an hour at home adding images to main code and getting them to work correctly when clicked.
