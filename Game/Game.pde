@@ -57,45 +57,45 @@ void mouseClicked() {
     }
   } else if (gameState == 2){
   //used to add items in build mode
-  if (drawMode){
-    int xcor = (mouseX/50)*50;
-    int ycor = (mouseY/50)*50;
-    if (item == tile){
-      Tile t = new Tile(xcor, ycor, #800080);
-      t.rotation = rotation;
-      maze.grid.add(t);
-    } else if (item == spike){
-      Spike s = new Spike(xcor, ycor,rotation);
-      s.rotation = rotation;
-      maze.grid.add(s);
-    } else if (item == point){
-      Point p = new Point(xcor, ycor);
-      maze.grid.add(p);
-    } else if (item == dartTrap){
-      DartTrap d = new DartTrap(xcor, ycor,rotation);
-      d.rotation = rotation;
-      maze.grid.add(d);
-    } else if (item == dart){
-      Darts d = new Darts(xcor, ycor,rotation);
-      d.rotation = rotation;
-      maze.grid.add(d);
-    } else if (item == end){
-      End e = new End(xcor, ycor);
-      maze.grid.add(e);
-    } else if (item == eraser){
-      int indexToRemove = -1;
-      for (int i=maze.grid.size()-1; i>=0; i--){
-        Tile t = maze.grid.get(i);
-        if (t.position[0] == xcor && t.position[1] == ycor && indexToRemove == -1){
-          indexToRemove = i;
+    if (drawMode){
+      int xcor = (mouseX/50)*50;
+      int ycor = (mouseY/50)*50;
+      if (item == tile){
+        Tile t = new Tile(xcor, ycor, #800080);
+        t.rotation = rotation;
+        maze.grid.add(t);
+      } else if (item == spike){
+        Spike s = new Spike(xcor, ycor,rotation);
+        s.rotation = rotation;
+        maze.grid.add(s);
+      } else if (item == point){
+        Point p = new Point(xcor, ycor);
+        maze.grid.add(p);
+      } else if (item == dartTrap){
+        DartTrap d = new DartTrap(xcor, ycor,rotation);
+        d.rotation = rotation;
+        maze.grid.add(d);
+      } else if (item == dart){
+        Darts d = new Darts(xcor, ycor,rotation);
+        d.rotation = rotation;
+        maze.grid.add(d);
+      } else if (item == end){
+        End e = new End(xcor, ycor);
+        maze.grid.add(e);
+      } else if (item == eraser){
+        int indexToRemove = -1;
+        for (int i=maze.grid.size()-1; i>=0; i--){
+          Tile t = maze.grid.get(i);
+          if (t.position[0] == xcor && t.position[1] == ycor && indexToRemove == -1){
+            indexToRemove = i;
+          }
         }
-      }
-      if (indexToRemove != -1){
-        maze.grid.remove(indexToRemove);
+        if (indexToRemove != -1){
+          maze.grid.remove(indexToRemove);
+        }
       }
     }
   }
-}
 }
 
 void keyPressed() {
@@ -130,46 +130,46 @@ void draw() {
   } else if (gameState == 1){
     image(startPage2, 0, 0, width, height);
   } else if (gameState == 2){
-  tick++;
-  background(0);
-  fill(#00FF00);
-  textSize(26);
-  String modeText = "";
-  if (drawMode){
-    modeText = "Build!";
-  } else{
-    modeText = "Play!";
-  } //text for mode
+    tick++;
+    background(0);
+    fill(#00FF00);
+    textSize(26);
+    String modeText = "";
+    if (drawMode){
+      modeText = "Build!";
+    } else{
+      modeText = "Play!";
+    } //text for mode
   
-  String itemText = "";
-  if (item == tile){
-    itemText = "Tile";
-  } else if (item == dart){
-    itemText = "Dart";
-  }else if (item == spike){
-    itemText = "Spike";
-  } else if (item == point){
-    itemText = "Point";
-  } else if (item == dartTrap){
-    itemText = "Dart Trap";
-  } else if (item == end){
-    itemText = "End Tile";
-  } else if (item == eraser){
-    itemText = "Eraser";
-  }//text for items
-  if (drawMode){ 
-    fill(255);
-    text("Mode: " + modeText, 10, 30);
-    text("Item: " + itemText, 10, 60);
-    text("Rotation: " + rotation, 10, 90);
-    noFill();
-    grid();
-    player.render();
-    maze.render();
-  } else{
-    fill(255);
-    text("Mode: " + modeText, 10, 30);
-    text("Score: " + player.score, 10, 60);
+    String itemText = "";
+    if (item == tile){
+      itemText = "Tile";
+    } else if (item == dart){
+      itemText = "Dart";
+    }else if (item == spike){
+      itemText = "Spike";
+    } else if (item == point){
+      itemText = "Point";
+    } else if (item == dartTrap){
+      itemText = "Dart Trap";
+    } else if (item == end){
+      itemText = "End Tile";
+    } else if (item == eraser){
+      itemText = "Eraser";
+    }//text for items
+    if (drawMode){ 
+      fill(255);
+      text("Mode: " + modeText, 10, 30);
+      text("Item: " + itemText, 10, 60);
+      text("Rotation: " + rotation, 10, 90);
+      noFill();
+      grid();
+      player.render();
+      maze.render();
+    } else{
+      fill(255);
+      text("Mode: " + modeText, 10, 30);
+      text("Score: " + player.score, 10, 60);
       maze.render();
       player.move();
       player.render();
@@ -184,9 +184,9 @@ void draw() {
           ((Darts)t).playerContact();
         }
       }
-       if (maze.end) {
-      background(0);
-      maze.endScreen();
+      if (maze.end) {
+        background(0);
+        maze.endScreen();
       }
     }
   }
