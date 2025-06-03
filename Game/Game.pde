@@ -43,6 +43,19 @@ void setup(){
 }
 
 void mouseClicked() {
+  if (gameState == 0){
+    if (mouseX >= 400 && mouseX <= 800 && mouseY >= 500 && mouseY <= 570 ){
+      gameState = 1;
+    }
+  } else if(gameState == 1){
+    if (mouseX >= 100 && mouseX <= 400 && mouseY >= 500 && mouseY <= 570){
+      drawMode = false;
+      gameState = 2;
+    } else if (mouseX >= 700 && mouseX <= 1000 && mouseY >= 500 && mouseY <= 570){
+      drawMode = true;
+      gameState = 2;
+    }
+  } else if (gameState == 2){
   //used to add items in build mode
   if (drawMode){
     int xcor = (mouseX/50)*50;
@@ -82,6 +95,7 @@ void mouseClicked() {
       }
     }
   }
+}
 }
 
 void keyPressed() {
