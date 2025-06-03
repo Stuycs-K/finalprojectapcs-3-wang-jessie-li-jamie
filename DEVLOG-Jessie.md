@@ -30,3 +30,9 @@ Worked in class on writing the Maze class, also started testing and debugging in
 
 ### 2025-05-31 - Fixing player contact issues and fixing up rendering
 Spent around an hour working on fixing issues with the player contact with tiles, spikes, and points. Spent around another hour later finishing up contact with spikes and points, also fixed lava rendering issue.
+
+### 2025-06-01 - Main class and Eraser
+Spent around 25 minutes adding dart contact to main class and adding an eraser function to build mode.
+
+### 2025-06-02 - Main class and Images
+Spend class on canva making start pages and end page. Spent about half an hour at home adding images to main code and getting them to work correctly when clicked.
