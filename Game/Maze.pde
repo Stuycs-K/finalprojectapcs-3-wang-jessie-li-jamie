@@ -1,9 +1,11 @@
 public class Maze{
   ArrayList<Tile> grid;
+  PImage endScreen;
   boolean end = false;
   
   public Maze(){
     grid = new ArrayList<Tile>();
+    loadImage("img/endScreen.png");
   }
   void render(){
     for (Tile t : grid){
@@ -16,7 +18,7 @@ public class Maze{
     textSize(40);
     textAlign(CENTER);
     if (!player.alive) {
-      text("You died!", width/2, height/2);
+      image(endScreen, 0, 0, width, height);
     } else {
       text("You win!", width/2, height/2);
     }
