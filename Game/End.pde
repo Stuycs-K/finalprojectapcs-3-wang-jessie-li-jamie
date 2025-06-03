@@ -4,7 +4,7 @@ public class End extends Tile{
   public End(int x, int y) {
     super(x,y, 255);
     type = "End";
-    end = loadImage("img/end.png");
+    end = loadImage("img/endTile.png");
   }
   
   void render() {
