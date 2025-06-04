@@ -13,25 +13,23 @@ public class Pufferfish extends Tile {
   void render() {
     fill(c);
     noStroke();
-    if (tick % 20 < 10) {
+    playerContact();
+    if (tick % 200 < 100) {
       isDeflated = false;
       image(inflated, position[0] - tileSize, position[1] - tileSize, 3 * tileSize, 3 * tileSize);
     } else {
       isDeflated = true;
       image(deflated, position[0], position[1], tileSize, tileSize);
     }
-    playerContact();
   }
   
   void playerContact(){
-    if (checkContact(player.position.x, player.position.y)){
-      if (!isDeflated) {
+    if (!isDeflated && player.position.x+20 > position[0] - (3*tileSize) && player.position.x < position[0]+(3*tileSize) && player.position.y + 20 > position[1]- (3*tileSize) && player.position.y < position[1]+(3*tileSize)){
         player.alive = false;
         player.c = color(100);
         maze.end = true;
-      } else {
+      } else if (isDeflated && checkContact(player.position.x, player.position.y)) {
         player.velocity.set(0, 0);
       }
     }
-  }
 }
