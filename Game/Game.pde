@@ -163,7 +163,7 @@ void draw() {
     } else if (item == eraser){
       itemText = "Eraser";
     }//text for items
-    if (drawMode){ 
+    if (drawMode){
       fill(255);
       text("Mode: " + modeText, 10, 30);
       text("Item: " + itemText, 10, 60);
@@ -171,7 +171,6 @@ void draw() {
       noFill();
       grid();
       player.render();
-      maze.render();
     } else{
       fill(255);
       text("Mode: " + modeText, 10, 30);
