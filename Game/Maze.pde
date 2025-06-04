@@ -1,9 +1,13 @@
 public class Maze{
   ArrayList<Tile> grid;
+  PImage endScreen;
+  PImage youWin;
   boolean end = false;
   
   public Maze(){
     grid = new ArrayList<Tile>();
+    endScreen = loadImage("img/endScreen.png");
+    youWin = loadImage("img/youWin.png");
   }
   void render(){
     for (Tile t : grid){
@@ -11,16 +15,15 @@ public class Maze{
     }
   }
   void endScreen(){
-    background(0);
-    fill(255, 0, 0);
-    textSize(40);
+    fill(255);
+    textSize(100);
     textAlign(CENTER);
     if (!player.alive) {
-      text("You died!", width/2, height/2);
+      image(endScreen, 0, 0, width, height);
     } else {
-      text("You win!", width/2, height/2);
+      image(youWin, 0, 0, width, height);
     }
-    text("Score: "+player.score, width/2, height-600/2);
+    text("Score: "+player.score, width/2, height-100);
   }
   
   String toString() {
