@@ -36,3 +36,6 @@ Spent around 25 minutes adding dart contact to main class and adding an eraser f
 
 ### 2025-06-02 - Main class and Images
 Spend class on canva making start pages and end page. Spent about half an hour at home adding images to main code and getting them to work correctly when clicked.
+
+### 2025-06-03 - End screen
+Worked in class on end screen images and added them into processing. Spent around 40 minutes at home working on animating the player using an image. Then spent a few minutes fixing image and text issues with the end screen.
