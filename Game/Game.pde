@@ -10,8 +10,9 @@ static int spike = 1;
 static int point = 2;
 static int dartTrap = 3;
 static int dart = 4;
-static int end = 5;
-static int eraser = 6;
+static int fish = 5;
+static int end = 6;
+static int eraser = 7;
 int item = tile;
 int rotation = 0;
 int tick = 0;
@@ -71,6 +72,9 @@ void mouseClicked() {
       } else if (item == point){
         Point p = new Point(xcor, ycor);
         maze.grid.add(p);
+      } else if (item == fish){
+        Pufferfish fish = new Pufferfish(xcor, ycor);
+        maze.grid.add(fish);
       } else if (item == dartTrap){
         DartTrap d = new DartTrap(xcor, ycor,rotation);
         d.rotation = rotation;
@@ -117,7 +121,7 @@ void keyPressed() {
     drawMode = !drawMode;
   //change items
   } else if (key == 't'){
-    item = (item+1) % 7;
+    item = (item+1) % 8;
   } else if (key == 'r'){
     rotation = (rotation + 90)%360;
   } 
@@ -154,6 +158,8 @@ void draw() {
       itemText = "Dart Trap";
     } else if (item == end){
       itemText = "End Tile";
+    } else if (item == fish){
+      itemText = "Pufferfishh";
     } else if (item == eraser){
       itemText = "Eraser";
     }//text for items
