@@ -11,6 +11,7 @@ public class Saw extends Tile {
     originalX = x;
     originalY = y;
     movements = new ArrayDeque<>();
+    type = "Saw";
   }
   
   void render() {
@@ -23,7 +24,7 @@ public class Saw extends Tile {
       }
     }
     image(sawImg,position[0],position[1],tileSize, tileSize+1);
-    //playerContact();
+    playerContact();
   }
   
   void inRange() {
