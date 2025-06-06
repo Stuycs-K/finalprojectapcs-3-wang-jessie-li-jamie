@@ -26,6 +26,7 @@ public class Spike extends Tile{
       image(spikes4,position[0],position[1],tileSize,tileSize);
       //triangle(position[0] + tileSize, position[1], position[0] + tileSize, position[1] + tileSize, position[0], position[1] + tileSize/2);
     }
+    playerContact();
   }
   void playerContact(){
     if (checkContact(player.position.x, player.position.y)){

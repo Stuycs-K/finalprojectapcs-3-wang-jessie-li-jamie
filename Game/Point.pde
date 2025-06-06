@@ -11,6 +11,7 @@ public class Point extends Tile{
     noStroke();
     image(coin, position[0] + tileSize/3 + 2, position[1] + tileSize/3 + 2, tileSize * 0.3, tileSize * 0.3);
     //ellipse(position[0] + tileSize/2, position[1] + tileSize/2, tileSize * 0.3, tileSize * 0.3);
+    playerContact();
   }
   void playerContact(){
     if (checkContact(player.position.x, player.position.y)) {
