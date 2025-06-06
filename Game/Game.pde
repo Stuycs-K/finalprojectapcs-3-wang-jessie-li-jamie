@@ -202,14 +202,13 @@ void draw() {
         }
       }
       if (maze.end){
-        if (mouseX >= 530 && mouseX <= 830 && mouseY >= 550 && mouseY <= 650){
-          restartGame();
-        }
+        background(0);
+        maze.endScreen();
       }
     }
   }
 }
-void restartGame(){
+/*void restartGame(){
   maze = new Maze();
   player = new Player(100 + 17, 700 + 17);
   lava = new Lava();
@@ -217,4 +216,4 @@ void restartGame(){
   if (drawMode){
     maze.grid = new ArrayList<Tile>();
   }
-}
+}*/
