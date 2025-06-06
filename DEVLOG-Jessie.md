@@ -39,3 +39,9 @@ Spend class on canva making start pages and end page. Spent about half an hour a
 
 ### 2025-06-03 - End screen
 Worked in class on end screen images and added them into processing. Spent around 40 minutes at home working on animating the player using an image. Then spent a few minutes fixing image and text issues with the end screen.
+
+### 2025-06-04 - Main class
+Spent class working on main so the play mode goes to the level but build mode goes to an empty grid.
+
+### 2025-06-05 
+Spend 15 minutes working on the replay button in the end screen.
