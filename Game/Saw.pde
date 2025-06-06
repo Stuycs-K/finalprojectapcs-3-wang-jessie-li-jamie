@@ -15,7 +15,7 @@ public class Saw extends Tile {
   
   void render() {
     inRange();
-    if (movements.size() != 0 && player.position.x > position[0] - range && player.position.x < position[0] + tileSize + range && tick%8 ==  0) {
+    if (movements.size() != 0 && player.position.x > position[0] - range && player.position.x < position[0] + tileSize + range && tick%3 ==  0) {
       if ((position[0] == originalX && position[1] == originalY && player.position.y <= position[1] - range && player.position.y < position[1] + range) || !(position[0] == originalX && position[1] == originalY) && (player.position.y > position[1] - range && player.position.y < position[1] + range)) {
         int[] newPos = movements.removeLast();
         position[0] = newPos[0];
@@ -23,17 +23,24 @@ public class Saw extends Tile {
       }
     }
     image(sawImg,position[0],position[1],tileSize, tileSize+1);
+    //playerContact();
   }
   
   void inRange() {
     if (position[0] == originalX && position[1] == originalY) {
       if (player.position.x > position[0] - range && player.position.x < position[0] + tileSize + range && player.position.y > position[1] - range && !(player.position.y > position[1] + tileSize)) {
-        println("run");
         movements.add(new int[]{(int)(player.position.x), (int)(player.position.y)});
       }
     } else if (player.position.x > position[0] - range && player.position.x < position[0] + tileSize + range && player.position.y > position[1] - range && player.position.y < position[1] + range) {
-      println("run");
       movements.add(new int[]{(int)(player.position.x), (int)(player.position.y)});
+    }
+  }
+  
+  void playerContact() {
+    if (checkContact(player.position.x, player.position.y)){
+      player.alive = false;
+      player.c = color(100);
+      maze.end = true;
     }
   }
 }
