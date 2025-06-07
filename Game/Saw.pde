@@ -16,7 +16,7 @@ public class Saw extends Tile {
   
   void render() {
     inRange();
-    if (movements.size() != 0 && player.position.x > position[0] - range && player.position.x < position[0] + tileSize + range && tick%3 ==  0) {
+    if (movements.size() != 0 && player.position.x > position[0] - range && player.position.x < position[0] + tileSize + range && tick%2 ==  0) {
       if ((position[0] == originalX && position[1] == originalY && player.position.y <= position[1] - range && player.position.y < position[1] + range) || !(position[0] == originalX && position[1] == originalY) && (player.position.y > position[1] - range && player.position.y < position[1] + range)) {
         int[] newPos = movements.removeLast();
         position[0] = newPos[0];
