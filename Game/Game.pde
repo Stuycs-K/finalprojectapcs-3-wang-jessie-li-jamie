@@ -67,6 +67,7 @@ void mouseClicked() {
     } else if (mouseX >= 630 && mouseX <= 1000 && mouseY >= 400 && mouseY <= 700){
       drawMode = true;
       gameState = 2;
+      maze.grid = new ArrayList<Tile>();
     }
   } else if (gameState == 2){
   //used to add items in build mode
@@ -139,7 +140,9 @@ void keyPressed() {
     item = (item+1) % 9;
   } else if (key == 'r'){
     rotation = (rotation + 90)%360;
-  } 
+  } else if (key == 'b'){
+    gameState = 1;
+  }
 }
 
 //everything goes here
