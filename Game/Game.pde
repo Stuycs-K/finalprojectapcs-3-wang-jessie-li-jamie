@@ -158,6 +158,20 @@ void draw() {
     image(startPage2, 0, 0, width, height);
   } else if (gameState == 2){
     tick++;
+    player.score = 0;
+      maze.grid = new ArrayList<Tile>();
+      if (!drawMode && tempGrid != null){  
+        for (Tile tile : tempGrid) {
+          maze.grid.add(tile);
+        }
+      }
+      for (Tile t:maze.grid) {
+        if (t.type.equals("Saw")) {
+          ((Saw)t).movements = new ArrayDeque<>();
+          ((Saw)t).run = false;
+          ((Saw)t).position = new int[]{((Saw)t).originalX,((Saw)t).originalY};
+        }
+      }
     background(0);
     fill(0);
     noStroke();
