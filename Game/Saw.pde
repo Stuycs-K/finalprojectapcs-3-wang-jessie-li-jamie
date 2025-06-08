@@ -1,14 +1,14 @@
 import java.util.*;
 public class Saw extends Tile {
   ArrayDeque<int[]> movements;
-  int range;
+  float range;
   int originalX;
   int originalY;
   boolean run;
   
   public Saw(int x, int y) {
     super(x,y,255);
-    range =  2 * tileSize;
+    range = tileSize;
     originalX = x;
     originalY = y;
     movements = new ArrayDeque<>();
@@ -32,7 +32,7 @@ public class Saw extends Tile {
   void inRange() {
     checkCoor();
     if (run) {
-      int[] newCoor = new int[]{(int)(player.position.x), (int)(player.position.y)};
+      int[] newCoor = new int[]{((int)(player.position.x)/5)*5, ((int)(player.position.y)/20)*20};
       if (!contains(newCoor)) {
         movements.add(newCoor);
       }
@@ -50,7 +50,7 @@ public class Saw extends Tile {
   }
   
   void checkCoor() {
-    if (!run && ((position[0] >= player.position.x - tileSize && position[0] <= player.position.x + tileSize) || (position[1] <= player.position.y + tileSize && position[1] >= player.position.y - tileSize))) {
+    if (!run && ((position[0] >= player.position.x - tileSize && position[0] <= player.position.x + tileSize) && (position[1] <= player.position.y + tileSize && position[1] >= player.position.y - tileSize))) {
       run = true;
     }
   }
