@@ -14,7 +14,7 @@ public class Pufferfish extends Tile {
     fill(c);
     noStroke();
     playerContact();
-    if (tick % 200 < 100) {
+    if (tick % 150 < 75) {
       isDeflated = false;
       image(inflated, position[0] - tileSize, position[1] - tileSize, 3 * tileSize, 3 * tileSize);
     } else {
@@ -24,12 +24,14 @@ public class Pufferfish extends Tile {
   }
   
   void playerContact(){
-    if (!isDeflated && player.position.x+20 > position[0] - (3*tileSize) && player.position.x < position[0]+(3*tileSize) && player.position.y + 20 > position[1]- (3*tileSize) && player.position.y < position[1]+(3*tileSize)){
-        player.alive = false;
-        player.c = color(100);
-        maze.end = true;
-      } else if (isDeflated && checkContact(player.position.x, player.position.y)) {
-        player.velocity.set(0, 0);
-      }
+    if (!invulnerability) {
+      if (!isDeflated && player.position.x+20 > position[0] - (3*tileSize) && player.position.x < position[0]+(3*tileSize) && player.position.y + 20 > position[1]- (3*tileSize) && player.position.y < position[1]+(3*tileSize)){
+          player.alive = false;
+          player.c = color(100);
+          maze.end = true;
+        } else if (isDeflated && checkContact(player.position.x, player.position.y)) {
+          player.velocity.set(0, 0);
+        }
     }
+  }
 }

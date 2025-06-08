@@ -29,10 +29,12 @@ public class Spike extends Tile{
     playerContact();
   }
   void playerContact(){
-    if (checkContact(player.position.x, player.position.y)){
-      player.alive = false;
-      player.c = color(100);
-      maze.end = true;
+    if (!invulnerability) {
+      if (checkContact(player.position.x, player.position.y)){
+        player.alive = false;
+        player.c = color(100);
+        maze.end = true;
+      }
     }
   }
 }
