@@ -51,3 +51,5 @@ Spent class fixing replay button. Spent 20 minutes fixing mouse clicked for star
 
 ### 2025-06-07 - Main class, Text issues
 Spent around 20 minutes fixing text issues and adding a black box under it so it is easier to read in the build mode.
+
+I believe this document accurately reflects the contributions of my teamate.
