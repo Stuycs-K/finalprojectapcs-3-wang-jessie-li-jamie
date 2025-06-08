@@ -7,6 +7,7 @@ PImage startPage;
 PImage startPage2;
 int gameState = 0;
 boolean drawMode = true;
+boolean invulnerability = false;
 static int tile = 0;
 static int spike = 1;
 static int point = 2;
@@ -142,6 +143,9 @@ void keyPressed() {
     rotation = (rotation + 90)%360;
   } else if (key == 'b'){
     gameState = 1;
+  }
+  if (key == 'i') {
+    invulnerability = !invulnerability; 
   }
 }
 

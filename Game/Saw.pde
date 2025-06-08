@@ -40,10 +40,12 @@ public class Saw extends Tile {
   }
   
   void playerContact() {
-    if (checkContact(player.position.x, player.position.y)){
-      player.alive = false;
-      player.c = color(100);
-      maze.end = true;
+    if (!invulnerability) {
+      if (checkContact(player.position.x, player.position.y)){
+        player.alive = false;
+        player.c = color(100);
+        maze.end = true;
+      }
     }
   }
   

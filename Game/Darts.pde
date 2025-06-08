@@ -55,11 +55,13 @@ public class Darts extends Tile{
   }
   
    void playerContact() {
-    if (player.position.x+20 > position[0]-10 && player.position.x < position[0]+10 && player.position.y + 20 > position[1]-10 && player.position.y < position[1]+10) {
-      player.alive = false;
-      player.c = color(100);
-      maze.end = true;
-      }
+    if (!invulnerability) {
+      if (player.position.x+20 > position[0]-10 && player.position.x < position[0]+10 && player.position.y + 20 > position[1]-10 && player.position.y < position[1]+10) {
+        player.alive = false;
+        player.c = color(100);
+        maze.end = true;
+        }
+    }
   }
   
   void wallContact() {

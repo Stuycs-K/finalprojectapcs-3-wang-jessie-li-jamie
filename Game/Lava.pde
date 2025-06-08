@@ -24,10 +24,12 @@ public class Lava extends Tile {
   }
   
   void playerContact() {
-    if (height-speed <= player.position.y+20){
-      player.alive = false;
-      player.c = color(100);
-      maze.end = true;
+    if (!invulnerability) {
+      if (height-speed <= player.position.y+20){
+        player.alive = false;
+        player.c = color(100);
+        maze.end = true;
+      }
     }
   }
 }
