@@ -43,5 +43,11 @@ Worked in class on end screen images and added them into processing. Spent aroun
 ### 2025-06-04 - Main class
 Spent class working on main so the play mode goes to the level but build mode goes to an empty grid.
 
-### 2025-06-05 
+### 2025-06-05 - Main class, End screen
 Spend 15 minutes working on the replay button in the end screen.
+
+### 2025-06-06 - Main class
+Spent class fixing replay button. Spent 20 minutes fixing mouse clicked for start pages and end pages. Spent around 10 minutes making a back keybind.
+
+### 2025-06-07 - Main class, Text issues
+Spent around 20 minutes fixing text issues and adding a black box under it so it is easier to read in the build mode.
