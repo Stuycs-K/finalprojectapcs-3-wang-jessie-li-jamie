@@ -14,6 +14,7 @@ In play mode, the user controls a character moving through a pre-made maze using
 # Keybinds: 
 
 | **Key** | **Purpose** |
+| ------- | ----------- |
 | Up | Moves player up until player hits a wall/obstacle |
 | Down | Moves player down until player hits a wall/obstacle |
 | Left | Moves player left until player hits a wall/obstacle |
@@ -26,6 +27,7 @@ In play mode, the user controls a character moving through a pre-made maze using
 # Obstacles: 
 
 | **Tiles** | **Function** |
+| --------- | ------------ |
 | Tile | Stops the player, acts like a barrier |
 | Spikes | Kill player upon contact |
 | Dart Trap/Dart | Dart trap fires out darts at a constant rate that moves in a straight line and kills the player upon contact |
