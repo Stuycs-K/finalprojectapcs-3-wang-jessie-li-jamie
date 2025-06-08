@@ -13,7 +13,7 @@ The game interface includes:
 - A grid layout
 - On screen text that displays selected item, rotation, current mode, and score(play mode)
 
-### Video Link
+# Video Link
 https://drive.google.com/file/d/1Es3962_DKgq9Kn8TtRcrtPNHZczKUx2z/view 
 
   
