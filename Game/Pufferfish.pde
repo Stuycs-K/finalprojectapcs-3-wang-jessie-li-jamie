@@ -14,7 +14,7 @@ public class Pufferfish extends Tile {
     fill(c);
     noStroke();
     playerContact();
-    if (tick % 200 < 100) {
+    if (tick % 150 < 75) {
       isDeflated = false;
       image(inflated, position[0] - tileSize, position[1] - tileSize, 3 * tileSize, 3 * tileSize);
     } else {
