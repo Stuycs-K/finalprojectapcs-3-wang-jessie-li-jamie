@@ -50,7 +50,7 @@ public class Saw extends Tile {
   }
   
   void checkCoor() {
-    if (!run && ((position[0] >= player.position.x - tileSize && position[0] <= player.position.x + tileSize) && (position[1] <= player.position.y + tileSize && position[1] >= player.position.y - tileSize))) {
+    if (!run && ((player.position.x >= position[0] - tileSize - range && player.position.x <= position[0] + tileSize + range) && (player.position.y <= position[1] + tileSize + range && player.position.y >= position[1] - range - tileSize))) {
       run = true;
     }
   }
