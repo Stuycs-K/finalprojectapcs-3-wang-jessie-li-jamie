@@ -49,4 +49,7 @@ Edited pre-established maze grid to be more playable. Finished fixing restart bu
 ### 2024-06-07 - Fixing up saw class + created keybind for invulnerability + changes to maze to impliment new obstacles.
 Added the 'i' keybind to toggle invulnerability. Fixed up issues with the saw movement and the position on restart. Edited the pre-established maze grid to impliment the saw and pufferfish.
 
+### 2024-06-08 - Minor debugs + updated readme file
+Updated the ReadMe file to reflect current state of game. Fixed issues with restart + back.
+
 I believe this document accurately reflects the contributions of my teammate.
