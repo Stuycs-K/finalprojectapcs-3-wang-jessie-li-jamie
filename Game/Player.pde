@@ -45,11 +45,10 @@ public class Player{
     float nextY = position.y + velocity.y;
     for (int i = 0; i < maze.grid.size(); i++) {
       Tile t = maze.grid.get(i);
-      if (!t.type.equals("Darts") &&  !t.type.equals("Point") && !t.type.equals("Saw") && !t.type.equals("End") && t.checkContact(nextX, nextY)) {
-        if (!invulnerability && !t.type.equals("Spike")) {
-          velocity.set(0, 0);
-          return;
-        }
+      if (!invulnerability && !t.type.equals("Spike") && !t.type.equals("Darts") &&  !t.type.equals("Point") && !t.type.equals("Saw") && !t.type.equals("End") && t.checkContact(nextX, nextY)) {
+        velocity.set(0, 0);
+        return;
+      } else if (invulnerability && !t.type.equals("Darts") &&  !t.type.equals("Point") && !t.type.equals("Saw") && !t.type.equals("End") && t.checkContact(nextX, nextY)) {
         velocity.set(0, 0);
         return;
       }
