@@ -124,13 +124,13 @@ void keyPressed() {
   }
   //change velocity
       if (keyCode == UP){
-        player.setVel(0, -10);
+        player.setVel(0, -15);
       } else if (keyCode == DOWN){
-        player.setVel(0, 10);
+        player.setVel(0, 15);
       } else if (keyCode == LEFT){
-        player.setVel(-10, 0);
+        player.setVel(-15, 0);
       } else if (keyCode == RIGHT){
-        player.setVel(10, 0);
+        player.setVel(15, 0);
       }
   //change between the game and build modes
   if (key == ' '){
