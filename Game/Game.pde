@@ -251,4 +251,11 @@ void restartGame(){
   }
   restart = false;
   player.score = 0;
+  for (Tile t:maze.grid) {
+    if (t.type.equals("Saw")) {
+      ((Saw)t).movements = new ArrayDeque<>();
+      ((Saw)t).run = false;
+      ((Saw)t).position = new int[]{((Saw)t).originalX,((Saw)t).originalY};
+    }
+  }
 }

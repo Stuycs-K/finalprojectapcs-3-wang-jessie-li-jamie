@@ -50,18 +50,16 @@ public class Saw extends Tile {
   }
   
   void checkCoor() {
-    if (!run && ((position[0] >= player.position.x - tileSize && position[0] <= player.position.x + tileSize) && (position[1] <= player.position.y + tileSize && position[1] >= player.position.y - tileSize))) {
+    if (!run && ((player.position.x >= position[0] - tileSize && player.position.x <= position[0] + tileSize) && (player.position.y <= position[1] + tileSize && player.position.y >= position[1] - tileSize))) {
       run = true;
     }
   }
   
   boolean contains(int[] lst) {
     if (movements.size() != 0) {
-      for (int[] coor : movements) {
-        if (lst[0] == coor[0] && lst[1] == coor[1]) {
+        if (lst[0] == movements.getLast()[0] && lst[1] == movements.getLast()[1]) {
           return true;
         }
-      }
     }
     return false;
   }
