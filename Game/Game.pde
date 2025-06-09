@@ -250,9 +250,6 @@ void restartGame(){
   player = new Player(100 + 17, 700 + 17);
   lava = new Lava();
   maze.end = false;
-  if (drawMode){
-    maze.grid = new ArrayList<Tile>();
-  }
   restart = false;
   player.score = 0;
   for (Tile t:maze.grid) {
