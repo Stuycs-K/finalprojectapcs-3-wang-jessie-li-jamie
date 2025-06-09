@@ -11,6 +11,8 @@ Build mode allows you to build your own level on a blank grid and once you're do
 
 In play mode, the user controls a character moving through a pre-made maze using the arrow keys. The objective is to collect points, make it to the end tile, and avoid any obstacle that could kill you as lava is continously rising from underneath. You can also switch to build mode to add/remove tiles to make the level easier. The top left text box keep track of the points + mode. Upon death/winning, there is a restart option that would reload the pre-made maze without any modifications the player may have made.
 
+**Make sure to download GifAnimation library**
+
 # Keybinds: 
 
 | **Key** | **Purpose** |
